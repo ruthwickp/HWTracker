@@ -21,6 +21,7 @@
 		7D23480A198D88C500D4A802 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2347EC198D88C500D4A802 /* UIKit.framework */; };
 		7D234812198D88C500D4A802 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D234810198D88C500D4A802 /* InfoPlist.strings */; };
 		7D234814198D88C500D4A802 /* HWTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234813198D88C500D4A802 /* HWTrackerTests.m */; };
+		7D23481F198DDA0A00D4A802 /* HWTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D23481D198DDA0A00D4A802 /* HWTracker.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		7D23480F198D88C500D4A802 /* HWTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HWTrackerTests-Info.plist"; sourceTree = "<group>"; };
 		7D234811198D88C500D4A802 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7D234813198D88C500D4A802 /* HWTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWTrackerTests.m; sourceTree = "<group>"; };
+		7D23481E198DDA0A00D4A802 /* HWTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HWTracker.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				7D2347F7198D88C500D4A802 /* AppDelegate.h */,
 				7D2347F8198D88C500D4A802 /* AppDelegate.m */,
 				7D2347FA198D88C500D4A802 /* Main.storyboard */,
+				7D23481D198DDA0A00D4A802 /* HWTracker.xcdatamodeld */,
 				7D2347FD198D88C500D4A802 /* ViewController.h */,
 				7D2347FE198D88C500D4A802 /* ViewController.m */,
 				7D234800198D88C500D4A802 /* Images.xcassets */,
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D2347FF198D88C500D4A802 /* ViewController.m in Sources */,
+				7D23481F198DDA0A00D4A802 /* HWTracker.xcdatamodeld in Sources */,
 				7D2347F9198D88C500D4A802 /* AppDelegate.m in Sources */,
 				7D2347F5198D88C500D4A802 /* main.m in Sources */,
 			);
@@ -466,6 +470,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7D23481D198DDA0A00D4A802 /* HWTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7D23481E198DDA0A00D4A802 /* HWTracker.xcdatamodel */,
+			);
+			currentVersion = 7D23481E198DDA0A00D4A802 /* HWTracker.xcdatamodel */;
+			path = HWTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7D2347DD198D88C500D4A802 /* Project object */;
 }
