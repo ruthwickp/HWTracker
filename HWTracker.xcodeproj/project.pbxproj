@@ -27,6 +27,7 @@
 		7D234873198DE1EC00D4A802 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234872198DE1EC00D4A802 /* School.m */; };
 		7D234876198DE1EC00D4A802 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234875198DE1EC00D4A802 /* Subject.m */; };
 		7D234879198DE1EC00D4A802 /* Homework.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234878198DE1EC00D4A802 /* Homework.m */; };
+		7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D51076C198F2E1F00A71500 /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		7D234875198DE1EC00D4A802 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
 		7D234877198DE1EC00D4A802 /* Homework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Homework.h; sourceTree = "<group>"; };
 		7D234878198DE1EC00D4A802 /* Homework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Homework.m; sourceTree = "<group>"; };
+		7D51076B198F2E1F00A71500 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		7D51076C198F2E1F00A71500 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				7D2347F7198D88C500D4A802 /* AppDelegate.h */,
 				7D2347F8198D88C500D4A802 /* AppDelegate.m */,
 				7D2347FA198D88C500D4A802 /* Main.storyboard */,
+				7D51076B198F2E1F00A71500 /* HomeViewController.h */,
+				7D51076C198F2E1F00A71500 /* HomeViewController.m */,
 				7D23486B198DE1EB00D4A802 /* Student.h */,
 				7D23486C198DE1EB00D4A802 /* Student.m */,
 				7D234877198DE1EC00D4A802 /* Homework.h */,
@@ -280,6 +285,7 @@
 				7D2347FF198D88C500D4A802 /* ViewController.m in Sources */,
 				7D23481F198DDA0A00D4A802 /* HWTracker.xcdatamodeld in Sources */,
 				7D2347F9198D88C500D4A802 /* AppDelegate.m in Sources */,
+				7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */,
 				7D234870198DE1EC00D4A802 /* Teacher.m in Sources */,
 				7D2347F5198D88C500D4A802 /* main.m in Sources */,
 				7D23486D198DE1EB00D4A802 /* Student.m in Sources */,
@@ -490,6 +496,7 @@
 				7D234819198D88C500D4A802 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D23481A198D88C500D4A802 /* Build configuration list for PBXNativeTarget "HWTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +505,7 @@
 				7D23481C198D88C500D4A802 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
