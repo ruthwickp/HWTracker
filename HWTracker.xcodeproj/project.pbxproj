@@ -73,6 +73,7 @@
 		7D51076C198F2E1F00A71500 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		7D6021611992A45A006CC900 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		7D6021621992A45A006CC900 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		7D6021641992D144006CC900 /* DatabaseAvailability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatabaseAvailability.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +135,7 @@
 			children = (
 				7D2347F7198D88C500D4A802 /* AppDelegate.h */,
 				7D2347F8198D88C500D4A802 /* AppDelegate.m */,
+				7D6021641992D144006CC900 /* DatabaseAvailability.h */,
 				7D2347FA198D88C500D4A802 /* Main.storyboard */,
 				7D60216019929552006CC900 /* ViewControllers */,
 				7D60215F19929529006CC900 /* Core Data Model */,
