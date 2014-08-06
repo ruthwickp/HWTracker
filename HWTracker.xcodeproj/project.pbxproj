@@ -22,12 +22,12 @@
 		7D234812198D88C500D4A802 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D234810198D88C500D4A802 /* InfoPlist.strings */; };
 		7D234814198D88C500D4A802 /* HWTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234813198D88C500D4A802 /* HWTrackerTests.m */; };
 		7D23481F198DDA0A00D4A802 /* HWTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D23481D198DDA0A00D4A802 /* HWTracker.xcdatamodeld */; };
-		7D23486D198DE1EB00D4A802 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D23486C198DE1EB00D4A802 /* Student.m */; };
 		7D234870198DE1EC00D4A802 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D23486F198DE1EC00D4A802 /* Teacher.m */; };
 		7D234873198DE1EC00D4A802 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234872198DE1EC00D4A802 /* School.m */; };
 		7D234876198DE1EC00D4A802 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234875198DE1EC00D4A802 /* Subject.m */; };
 		7D234879198DE1EC00D4A802 /* Homework.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234878198DE1EC00D4A802 /* Homework.m */; };
 		7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D51076C198F2E1F00A71500 /* HomeViewController.m */; };
+		7D6021631992A45A006CC900 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6021621992A45A006CC900 /* Student.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +61,6 @@
 		7D234811198D88C500D4A802 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7D234813198D88C500D4A802 /* HWTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWTrackerTests.m; sourceTree = "<group>"; };
 		7D23481E198DDA0A00D4A802 /* HWTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HWTracker.xcdatamodel; sourceTree = "<group>"; };
-		7D23486B198DE1EB00D4A802 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		7D23486C198DE1EB00D4A802 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		7D23486E198DE1EC00D4A802 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
 		7D23486F198DE1EC00D4A802 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		7D234871198DE1EC00D4A802 /* School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = School.h; sourceTree = "<group>"; };
@@ -73,6 +71,8 @@
 		7D234878198DE1EC00D4A802 /* Homework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Homework.m; sourceTree = "<group>"; };
 		7D51076B198F2E1F00A71500 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		7D51076C198F2E1F00A71500 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		7D6021611992A45A006CC900 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		7D6021621992A45A006CC900 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,21 +135,9 @@
 				7D2347F7198D88C500D4A802 /* AppDelegate.h */,
 				7D2347F8198D88C500D4A802 /* AppDelegate.m */,
 				7D2347FA198D88C500D4A802 /* Main.storyboard */,
-				7D51076B198F2E1F00A71500 /* HomeViewController.h */,
-				7D51076C198F2E1F00A71500 /* HomeViewController.m */,
-				7D23486B198DE1EB00D4A802 /* Student.h */,
-				7D23486C198DE1EB00D4A802 /* Student.m */,
-				7D234877198DE1EC00D4A802 /* Homework.h */,
-				7D234878198DE1EC00D4A802 /* Homework.m */,
-				7D234874198DE1EC00D4A802 /* Subject.h */,
-				7D234875198DE1EC00D4A802 /* Subject.m */,
-				7D234871198DE1EC00D4A802 /* School.h */,
-				7D234872198DE1EC00D4A802 /* School.m */,
-				7D23486E198DE1EC00D4A802 /* Teacher.h */,
-				7D23486F198DE1EC00D4A802 /* Teacher.m */,
+				7D60216019929552006CC900 /* ViewControllers */,
+				7D60215F19929529006CC900 /* Core Data Model */,
 				7D23481D198DDA0A00D4A802 /* HWTracker.xcdatamodeld */,
-				7D2347FD198D88C500D4A802 /* ViewController.h */,
-				7D2347FE198D88C500D4A802 /* ViewController.m */,
 				7D234800198D88C500D4A802 /* Images.xcassets */,
 				7D2347EF198D88C500D4A802 /* Supporting Files */,
 			);
@@ -183,6 +171,34 @@
 				7D234810198D88C500D4A802 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D60215F19929529006CC900 /* Core Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D6021611992A45A006CC900 /* Student.h */,
+				7D6021621992A45A006CC900 /* Student.m */,
+				7D234877198DE1EC00D4A802 /* Homework.h */,
+				7D234878198DE1EC00D4A802 /* Homework.m */,
+				7D234874198DE1EC00D4A802 /* Subject.h */,
+				7D234875198DE1EC00D4A802 /* Subject.m */,
+				7D234871198DE1EC00D4A802 /* School.h */,
+				7D234872198DE1EC00D4A802 /* School.m */,
+				7D23486E198DE1EC00D4A802 /* Teacher.h */,
+				7D23486F198DE1EC00D4A802 /* Teacher.m */,
+			);
+			name = "Core Data Model";
+			sourceTree = "<group>";
+		};
+		7D60216019929552006CC900 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7D2347FD198D88C500D4A802 /* ViewController.h */,
+				7D2347FE198D88C500D4A802 /* ViewController.m */,
+				7D51076B198F2E1F00A71500 /* HomeViewController.h */,
+				7D51076C198F2E1F00A71500 /* HomeViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,8 +304,8 @@
 				7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */,
 				7D234870198DE1EC00D4A802 /* Teacher.m in Sources */,
 				7D2347F5198D88C500D4A802 /* main.m in Sources */,
-				7D23486D198DE1EB00D4A802 /* Student.m in Sources */,
 				7D234873198DE1EC00D4A802 /* School.m in Sources */,
+				7D6021631992A45A006CC900 /* Student.m in Sources */,
 				7D234879198DE1EC00D4A802 /* Homework.m in Sources */,
 				7D234876198DE1EC00D4A802 /* Subject.m in Sources */,
 			);

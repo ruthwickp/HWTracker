@@ -9,7 +9,8 @@
 #import "HomeViewController.h"
 
 @interface HomeViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @end
 
 @implementation HomeViewController
@@ -29,5 +30,18 @@
     [self.view endEditing:YES];
 }
 
+// Determines whether of not to login when button is pressed
+- (IBAction)loginButtonPressed
+{
+    if ([self validLoginUsernameAndPassword]) {
+        
+    }
+}
+
+// Returns whether of not the user name and password are valid
+- (BOOL)validLoginUsernameAndPassword
+{
+    
+}
 
 @end

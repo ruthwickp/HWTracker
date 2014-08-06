@@ -10,4 +10,8 @@
 
 // View controller for login page
 @interface HomeViewController : UIViewController
+
+// Context for objects in the database
+@property (strong, nonatomic) NSManagedObjectContext *context;
+
 @end
