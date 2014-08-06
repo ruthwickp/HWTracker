@@ -111,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7D-i4-fud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141" y="568"/>
+            <point key="canvasLocation" x="604" y="713"/>
         </scene>
         <!--Home View Controller - HWTracker-->
         <scene sceneID="56i-rZ-fqn">
@@ -144,7 +144,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButtonPressed" destination="bJe-my-nrR" eventType="touchUpInside" id="8t5-en-aXb"/>
+                                    <action selector="loginButtonPressed:" destination="bJe-my-nrR" eventType="touchUpInside" id="XaQ-lI-FhS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQL-2o-aTi">
@@ -157,7 +157,7 @@
                                     <segue destination="Sdd-1V-2t5" kind="push" identifier="Register" id="r6v-44-vBS"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKW-UX-rB1">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AKW-UX-rB1">
                                 <rect key="frame" x="20" y="366" width="280" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -186,13 +186,44 @@
                     </view>
                     <navigationItem key="navigationItem" title="HWTracker" id="geR-FN-Z08"/>
                     <connections>
+                        <outlet property="errorTextView" destination="AKW-UX-rB1" id="x88-nl-DkC"/>
                         <outlet property="passwordTextField" destination="YqJ-rw-MxV" id="I5J-Yt-Smo"/>
                         <outlet property="usernameTextField" destination="bZO-vD-h99" id="e7u-oH-e33"/>
+                        <segue destination="Pp8-1z-n97" kind="push" identifier="Student Login" id="P2v-y3-BMK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UgB-O3-aQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="604" y="42"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="2Rl-zf-wXN">
+            <objects>
+                <tableViewController id="Pp8-1z-n97" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LAr-hn-vV9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rFN-FB-IIl">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rFN-FB-IIl" id="i6P-Ue-KTW">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Pp8-1z-n97" id="2qe-df-jtj"/>
+                            <outlet property="delegate" destination="Pp8-1z-n97" id="oZl-Wf-kni"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="9QB-tq-El1"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5o-lZ-PX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1273" y="719"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ugb-pG-MSJ">

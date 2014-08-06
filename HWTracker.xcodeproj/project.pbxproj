@@ -28,6 +28,7 @@
 		7D234879198DE1EC00D4A802 /* Homework.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234878198DE1EC00D4A802 /* Homework.m */; };
 		7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D51076C198F2E1F00A71500 /* HomeViewController.m */; };
 		7D6021631992A45A006CC900 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6021621992A45A006CC900 /* Student.m */; };
+		7D6021661992D5E1006CC900 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6021651992D5E1006CC900 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		7D6021611992A45A006CC900 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		7D6021621992A45A006CC900 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		7D6021641992D144006CC900 /* DatabaseAvailability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatabaseAvailability.h; sourceTree = "<group>"; };
+		7D6021651992D5E1006CC900 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D6021661992D5E1006CC900 /* CoreData.framework in Frameworks */,
 				7D2347EB198D88C500D4A802 /* CoreGraphics.framework in Frameworks */,
 				7D2347ED198D88C500D4A802 /* UIKit.framework in Frameworks */,
 				7D2347E9198D88C500D4A802 /* Foundation.framework in Frameworks */,
@@ -122,6 +125,7 @@
 		7D2347E7198D88C500D4A802 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D6021651992D5E1006CC900 /* CoreData.framework */,
 				7D2347E8198D88C500D4A802 /* Foundation.framework */,
 				7D2347EA198D88C500D4A802 /* CoreGraphics.framework */,
 				7D2347EC198D88C500D4A802 /* UIKit.framework */,
