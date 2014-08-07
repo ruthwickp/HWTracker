@@ -33,6 +33,8 @@
 		7D65D46B1993FC58003A0239 /* School+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D46A1993FC58003A0239 /* School+Create.m */; };
 		7D65D46E1993FD40003A0239 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D46D1993FD40003A0239 /* School.m */; };
 		7D65D47119942AFD003A0239 /* TabBarInsideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D47019942AFD003A0239 /* TabBarInsideNavigationController.m */; };
+		7D65D47419942EFA003A0239 /* ClassesCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D47319942EFA003A0239 /* ClassesCDTVC.m */; };
+		7D65D47719942F9D003A0239 /* TeacherClassesCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D47619942F9D003A0239 /* TeacherClassesCDTVC.m */; };
 		7DEC122419933E4E0005F710 /* Student+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEC122319933E4E0005F710 /* Student+Create.m */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,10 @@
 		7D65D46D1993FD40003A0239 /* School.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = School.m; sourceTree = "<group>"; };
 		7D65D46F19942AFD003A0239 /* TabBarInsideNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarInsideNavigationController.h; sourceTree = "<group>"; };
 		7D65D47019942AFD003A0239 /* TabBarInsideNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarInsideNavigationController.m; sourceTree = "<group>"; };
+		7D65D47219942EFA003A0239 /* ClassesCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesCDTVC.h; sourceTree = "<group>"; };
+		7D65D47319942EFA003A0239 /* ClassesCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesCDTVC.m; sourceTree = "<group>"; };
+		7D65D47519942F9D003A0239 /* TeacherClassesCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherClassesCDTVC.h; sourceTree = "<group>"; };
+		7D65D47619942F9D003A0239 /* TeacherClassesCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherClassesCDTVC.m; sourceTree = "<group>"; };
 		7DEC122219933E4E0005F710 /* Student+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+Create.h"; sourceTree = "<group>"; };
 		7DEC122319933E4E0005F710 /* Student+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+Create.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,6 +229,10 @@
 				7D65D47019942AFD003A0239 /* TabBarInsideNavigationController.m */,
 				7D65D4661993F645003A0239 /* StudentClassesCDTVC.h */,
 				7D65D4671993F645003A0239 /* StudentClassesCDTVC.m */,
+				7D65D47519942F9D003A0239 /* TeacherClassesCDTVC.h */,
+				7D65D47619942F9D003A0239 /* TeacherClassesCDTVC.m */,
+				7D65D47219942EFA003A0239 /* ClassesCDTVC.h */,
+				7D65D47319942EFA003A0239 /* ClassesCDTVC.m */,
 				7D2347FD198D88C500D4A802 /* ViewController.h */,
 				7D2347FE198D88C500D4A802 /* ViewController.m */,
 				7D51076B198F2E1F00A71500 /* HomeViewController.h */,
@@ -338,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D2347FF198D88C500D4A802 /* ViewController.m in Sources */,
+				7D65D47719942F9D003A0239 /* TeacherClassesCDTVC.m in Sources */,
 				7D23481F198DDA0A00D4A802 /* HWTracker.xcdatamodeld in Sources */,
 				7D65D4651993F5F1003A0239 /* CoreDataTableViewController.m in Sources */,
 				7D65D46E1993FD40003A0239 /* School.m in Sources */,
@@ -348,6 +359,7 @@
 				7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */,
 				7D234870198DE1EC00D4A802 /* Teacher.m in Sources */,
 				7D2347F5198D88C500D4A802 /* main.m in Sources */,
+				7D65D47419942EFA003A0239 /* ClassesCDTVC.m in Sources */,
 				7D6021631992A45A006CC900 /* Student.m in Sources */,
 				7D234879198DE1EC00D4A802 /* Homework.m in Sources */,
 				7DEC122419933E4E0005F710 /* Student+Create.m in Sources */,
