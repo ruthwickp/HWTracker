@@ -17,4 +17,10 @@
                            andPassword:(NSString *)password
                             fromSchool:(School *)school;
 
+// Finds a student in core data with the given information
+// and returns it, nil if not found
++ (Student *)findStudentWithUsername:(NSString *)username
+                         andPassword:(NSString *)password
+              inManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

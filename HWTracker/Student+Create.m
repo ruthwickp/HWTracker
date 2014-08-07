@@ -16,22 +16,16 @@
                            andPassword:(NSString *)password
                             fromSchool:(School *)school
 {
-    // Makes a request for a student
+    // Finds the student currently exists in out context
     Student *student = nil;
     NSManagedObjectContext *context = [school managedObjectContext];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
-    request.predicate = [NSPredicate predicateWithFormat:@"(username = %@) AND (password = %@) AND (fromSchool = %@)",
-                         username, password, school];
+    student = [self findStudentWithUsername:username
+                                andPassword:password
+                     inManagedObjectContext:context];
     
-    // Finds if the student already exists
-    // If not creates the student
-    NSError *error;
-    NSArray *matches = [context executeFetchRequest:request error:&error];
-    if (!matches || error || [matches count] > 1) {
-        NSLog(@"Error in creating student");
-    }
-    else if ([matches count]){
-        return [matches firstObject];
+    // Returns if it does
+    if (student) {
+        return student;
     }
     else {
         // Adds object to database and sets properties
@@ -40,6 +34,31 @@
         student.password = password;
         student.fromSchool = school;
     }
+    return student;
+}
+
+// Finds a student in core data with the given information
+// and returns it, nil if not found
++ (Student *)findStudentWithUsername:(NSString *)username
+                         andPassword:(NSString *)password
+              inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    // Makes a request for the student
+    Student *student = nil;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+    request.predicate = [NSPredicate predicateWithFormat:@"(username = %@) AND (password = %@)", username, password];
+    
+    // Finds if the student exists
+    NSError *error;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    if (!matches || error || [matches count] > 1) {
+        NSLog(@"Error in creating student");
+    }
+    else if ([matches count]) {
+        NSLog(@"Student exists");
+        student = [matches firstObject];
+    }
+    
     return student;
 }
 

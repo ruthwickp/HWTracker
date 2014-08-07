@@ -9,13 +9,13 @@
 #import "HomeViewController.h"
 #import "DatabaseAvailability.h"
 #import <CoreData/CoreData.h>
-#import "Student.h"
+#import "Student+Create.h"
 #import "Teacher.h"
+#import "StudentClassesCDTVC.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UITextView *errorTextView;
 @end
 
 @implementation HomeViewController
@@ -26,7 +26,7 @@
 - (void)awakeFromNib
 {
     [[NSNotificationCenter defaultCenter] addObserverForName:DatabaseAvailabilityNotification
-                                                      object:self
+                                                      object:nil
                                                        queue:nil
                                                   usingBlock:^(NSNotification *note) {
                                                       self.context = note.userInfo[DatabaseContext];
@@ -36,6 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [Student createStudentWithUsername:@"ruthwickp" andPassword:@"Ruthwick1995" fromSchool:nil];
 
     // Removes keyboard when tapped
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeKeyboard)];
@@ -50,43 +51,43 @@
 
 #pragma mark - Button Presses
 
+#define STUDENT_LOGIN @"Student Login"
+#define TEACHER_LOGIN @"Teacher Login"
+
 // Determines whether or not to login when button is pressed
 - (IBAction)loginButtonPressed:(UIButton *)sender {
-    // Sees if a student logged in and segues
-    Student *student = [self studentLogin];
-    if (student) {
-        [self performSegueWithIdentifier:@"Student Login" sender:sender];
-        return;
+    // Sees if a student login was successful and segues
+    if ([self studentLoginSuccessful]) {
+        [self performSegueWithIdentifier:STUDENT_LOGIN sender:sender];
     }
-    
-    // Checks if teacher logged in and segues
-    Teacher *teacher = [self teacherLogin];
-    if (teacher) {
-        [self performSegueWithIdentifier:@"Teacher Login" sender:sender];
-        return;
+    // Checks if teacher login was successful and segues
+    else if ([self teacherLoginSuccessful]) {
+        [self performSegueWithIdentifier:TEACHER_LOGIN sender:sender];
     }
-    
-    // If there is no match, display error message in textview
-    NSDictionary *attributes = @{ NSFontAttributeName : [UIFont boldSystemFontOfSize:[UIFont systemFontSize]],
-                                  NSForegroundColorAttributeName : [UIColor redColor] };
-    NSAttributedString *errorMessage = [[NSAttributedString alloc] initWithString:@"Invalid username or password"
-                                                                       attributes:attributes];
-    self.errorTextView.attributedText = errorMessage;
-    self.errorTextView.textAlignment = NSTextAlignmentCenter;
-
+    else {
+        // If no match, pop up an alert view with error message
+        [self alert:@"Invalid username or password"];
+    }
 }
 
-
-// Returns a Student with the given username and password
-- (Student *)studentLogin
+// Displays an alert view with the following message
+- (void)alert:(NSString *)msg
 {
-    Student *student = nil;
-    NSString *username = self.usernameTextField.text;
-    NSString *password = self.passwordTextField.text;
-    
+    [[[UIAlertView alloc] initWithTitle:@"Login Failed"
+                               message:msg
+                              delegate:nil
+                     cancelButtonTitle:nil
+                     otherButtonTitles:@"Ok", nil] show];
+}
+
+// Returns whether the student login was successful
+- (BOOL)studentLoginSuccessful
+{
+    BOOL match = NO;
     // Makes a request to see if a student logged in
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
-    request.predicate = [NSPredicate predicateWithFormat:@"(username = %@) AND (password = %@)", username, password];
+    request.predicate = [NSPredicate predicateWithFormat:@"(username = %@) AND (password = %@)",
+                         self.usernameTextField.text, self.passwordTextField.text];
     
     // Determines if there is a match for student
     NSError *error;
@@ -95,21 +96,19 @@
         NSLog(@"Error in retrieving login match for student");
     }
     else if ([matches count]) {
-        student = [matches firstObject];
+        match = YES;
     }
-    return student;
+    return match;
 }
 
-// Returns whether the teacher login was valid
-- (Teacher *)teacherLogin
+// Returns whether the teacher login was successful
+- (BOOL)teacherLoginSuccessful
 {
-    Teacher *teacher = nil;
-    NSString *username = self.usernameTextField.text;
-    NSString *password = self.passwordTextField.text;
-    
+    BOOL match = NO;
     // Makes a request to see if a teacher logged in
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Teacher"];
-    request.predicate = [NSPredicate predicateWithFormat:@"(username = %@) AND (password = %@)", username, password];
+    request.predicate = [NSPredicate predicateWithFormat:@"(username = %@) AND (password = %@)",
+                         self.usernameTextField.text, self.passwordTextField.text];
     
     // Determines if there is a match for teacher
     NSError *error;
@@ -118,9 +117,49 @@
         NSLog(@"Error in retrieving login match for teacher");
     }
     else if ([matches count]) {
-        teacher = [matches firstObject];
+        match = YES;
     }
-    return teacher;
+    return match;
 }
 
+
+#pragma mark - TextField Delegate
+
+// Removes keyboard when returned
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // If the segue if for a student
+    if ([segue.identifier isEqualToString:STUDENT_LOGIN]) {
+        if ([segue.destinationViewController isKindOfClass:[StudentClassesCDTVC class]]) {
+            [self prepareStudentViewController:segue.destinationViewController];
+        }
+    }
+//    else if ([segue.identifier isEqualToString:TEACHER_LOGIN]) {
+//        if ([segue.destinationViewController isKindOfClass:[])
+//    }
+}
+
+// Prepares a view controller for the student
+- (void)prepareStudentViewController:(StudentClassesCDTVC *)studentCDTVC
+{
+    Student *student = [Student findStudentWithUsername:self.usernameTextField.text
+                                            andPassword:self.passwordTextField.text
+                                 inManagedObjectContext:self.context];
+    // Makes sure student exists (should always be true)
+    if (student) {
+        studentCDTVC.title = student.username;
+        studentCDTVC.student = student;
+    }
+    else {
+        NSLog(@"Student does not exist. Something wrong must have happened.");
+    }
+}
 @end
