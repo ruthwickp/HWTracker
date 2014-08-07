@@ -23,7 +23,6 @@
 		7D234814198D88C500D4A802 /* HWTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234813198D88C500D4A802 /* HWTrackerTests.m */; };
 		7D23481F198DDA0A00D4A802 /* HWTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D23481D198DDA0A00D4A802 /* HWTracker.xcdatamodeld */; };
 		7D234870198DE1EC00D4A802 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D23486F198DE1EC00D4A802 /* Teacher.m */; };
-		7D234873198DE1EC00D4A802 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234872198DE1EC00D4A802 /* School.m */; };
 		7D234876198DE1EC00D4A802 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234875198DE1EC00D4A802 /* Subject.m */; };
 		7D234879198DE1EC00D4A802 /* Homework.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234878198DE1EC00D4A802 /* Homework.m */; };
 		7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D51076C198F2E1F00A71500 /* HomeViewController.m */; };
@@ -31,6 +30,8 @@
 		7D6021661992D5E1006CC900 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6021651992D5E1006CC900 /* CoreData.framework */; };
 		7D65D4651993F5F1003A0239 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D4641993F5F1003A0239 /* CoreDataTableViewController.m */; };
 		7D65D4681993F645003A0239 /* StudentClassesCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D4671993F645003A0239 /* StudentClassesCDTVC.m */; };
+		7D65D46B1993FC58003A0239 /* School+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D46A1993FC58003A0239 /* School+Create.m */; };
+		7D65D46E1993FD40003A0239 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D46D1993FD40003A0239 /* School.m */; };
 		7DEC122419933E4E0005F710 /* Student+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEC122319933E4E0005F710 /* Student+Create.m */; };
 /* End PBXBuildFile section */
 
@@ -67,8 +68,6 @@
 		7D23481E198DDA0A00D4A802 /* HWTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HWTracker.xcdatamodel; sourceTree = "<group>"; };
 		7D23486E198DE1EC00D4A802 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
 		7D23486F198DE1EC00D4A802 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
-		7D234871198DE1EC00D4A802 /* School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = School.h; sourceTree = "<group>"; };
-		7D234872198DE1EC00D4A802 /* School.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = School.m; sourceTree = "<group>"; };
 		7D234874198DE1EC00D4A802 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
 		7D234875198DE1EC00D4A802 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
 		7D234877198DE1EC00D4A802 /* Homework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Homework.h; sourceTree = "<group>"; };
@@ -83,6 +82,10 @@
 		7D65D4641993F5F1003A0239 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		7D65D4661993F645003A0239 /* StudentClassesCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentClassesCDTVC.h; sourceTree = "<group>"; };
 		7D65D4671993F645003A0239 /* StudentClassesCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentClassesCDTVC.m; sourceTree = "<group>"; };
+		7D65D4691993FC58003A0239 /* School+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "School+Create.h"; sourceTree = "<group>"; };
+		7D65D46A1993FC58003A0239 /* School+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "School+Create.m"; sourceTree = "<group>"; };
+		7D65D46C1993FD40003A0239 /* School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = School.h; sourceTree = "<group>"; };
+		7D65D46D1993FD40003A0239 /* School.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = School.m; sourceTree = "<group>"; };
 		7DEC122219933E4E0005F710 /* Student+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+Create.h"; sourceTree = "<group>"; };
 		7DEC122319933E4E0005F710 /* Student+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+Create.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,14 +197,16 @@
 			children = (
 				7DEC122219933E4E0005F710 /* Student+Create.h */,
 				7DEC122319933E4E0005F710 /* Student+Create.m */,
+				7D65D4691993FC58003A0239 /* School+Create.h */,
+				7D65D46A1993FC58003A0239 /* School+Create.m */,
+				7D65D46C1993FD40003A0239 /* School.h */,
+				7D65D46D1993FD40003A0239 /* School.m */,
 				7D6021611992A45A006CC900 /* Student.h */,
 				7D6021621992A45A006CC900 /* Student.m */,
 				7D234877198DE1EC00D4A802 /* Homework.h */,
 				7D234878198DE1EC00D4A802 /* Homework.m */,
 				7D234874198DE1EC00D4A802 /* Subject.h */,
 				7D234875198DE1EC00D4A802 /* Subject.m */,
-				7D234871198DE1EC00D4A802 /* School.h */,
-				7D234872198DE1EC00D4A802 /* School.m */,
 				7D23486E198DE1EC00D4A802 /* Teacher.h */,
 				7D23486F198DE1EC00D4A802 /* Teacher.m */,
 			);
@@ -330,12 +335,13 @@
 				7D2347FF198D88C500D4A802 /* ViewController.m in Sources */,
 				7D23481F198DDA0A00D4A802 /* HWTracker.xcdatamodeld in Sources */,
 				7D65D4651993F5F1003A0239 /* CoreDataTableViewController.m in Sources */,
+				7D65D46E1993FD40003A0239 /* School.m in Sources */,
 				7D65D4681993F645003A0239 /* StudentClassesCDTVC.m in Sources */,
 				7D2347F9198D88C500D4A802 /* AppDelegate.m in Sources */,
+				7D65D46B1993FC58003A0239 /* School+Create.m in Sources */,
 				7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */,
 				7D234870198DE1EC00D4A802 /* Teacher.m in Sources */,
 				7D2347F5198D88C500D4A802 /* main.m in Sources */,
-				7D234873198DE1EC00D4A802 /* School.m in Sources */,
 				7D6021631992A45A006CC900 /* Student.m in Sources */,
 				7D234879198DE1EC00D4A802 /* Homework.m in Sources */,
 				7DEC122419933E4E0005F710 /* Student+Create.m in Sources */,

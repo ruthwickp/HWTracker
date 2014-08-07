@@ -2,7 +2,7 @@
 //  School.m
 //  HWTracker
 //
-//  Created by Ruthwick Pathireddy on 8/2/14.
+//  Created by Ruthwick Pathireddy on 8/7/14.
 //  Copyright (c) 2014 Darkking. All rights reserved.
 //
 
@@ -15,7 +15,7 @@
 
 @dynamic name;
 @dynamic schoolCode;
-@dynamic teachers;
 @dynamic students;
+@dynamic teachers;
 
 @end

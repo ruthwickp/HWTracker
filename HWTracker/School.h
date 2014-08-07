@@ -2,7 +2,7 @@
 //  School.h
 //  HWTracker
 //
-//  Created by Ruthwick Pathireddy on 8/2/14.
+//  Created by Ruthwick Pathireddy on 8/7/14.
 //  Copyright (c) 2014 Darkking. All rights reserved.
 //
 
@@ -15,11 +15,16 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * schoolCode;
+@property (nonatomic, retain) NSSet *students;
 @property (nonatomic, retain) NSSet *teachers;
-@property (nonatomic, retain) Student *students;
 @end
 
 @interface School (CoreDataGeneratedAccessors)
+
+- (void)addStudentsObject:(Student *)value;
+- (void)removeStudentsObject:(Student *)value;
+- (void)addStudents:(NSSet *)values;
+- (void)removeStudents:(NSSet *)values;
 
 - (void)addTeachersObject:(Teacher *)value;
 - (void)removeTeachersObject:(Teacher *)value;
