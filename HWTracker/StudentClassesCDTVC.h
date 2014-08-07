@@ -11,5 +11,7 @@
 
 // Displays a students list of classes
 @interface StudentClassesCDTVC : CoreDataTableViewController
+
 @property (nonatomic, strong) Student *student;
+
 @end

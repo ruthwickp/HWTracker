@@ -12,6 +12,7 @@
 #import "Student+Create.h"
 #import "Teacher.h"
 #import "StudentClassesCDTVC.h"
+#import "School+Create.h"
 
 @interface HomeViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -30,17 +31,25 @@
                                                        queue:nil
                                                   usingBlock:^(NSNotification *note) {
                                                       self.context = note.userInfo[DatabaseContext];
+                                                      NSLog(@"%@", self.context);
+                                                      School *school = [School createSchoolWithName:@"Whitney" andSchoolCode:@"ASDF" inNSManagedObjectContext:self.context];
+                                                      [Student createStudentWithUsername:@"ruthwickp" andPassword:@"Ruthwick1995" fromSchool:school];
+
                                                   }];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Student createStudentWithUsername:@"ruthwickp" andPassword:@"Ruthwick1995" fromSchool:nil];
 
     // Removes keyboard when tapped
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeKeyboard)];
     [self.view addGestureRecognizer:tap];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 // Removes keyboard from view
@@ -136,15 +145,23 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // If the segue if for a student
-    if ([segue.identifier isEqualToString:STUDENT_LOGIN]) {
-        if ([segue.destinationViewController isKindOfClass:[StudentClassesCDTVC class]]) {
-            [self prepareStudentViewController:segue.destinationViewController];
+    // Segues to first view controller if the destinationVC is in
+    // a UITabBarController
+    if ([segue.destinationViewController isKindOfClass:[UITabBarController class]]) {
+        UITabBarController *tabBarController = segue.destinationViewController;
+        UIViewController *destinationVC = [tabBarController.viewControllers firstObject];
+
+        // If the segue if for a student
+        if ([segue.identifier isEqualToString:STUDENT_LOGIN]) {
+            if ([destinationVC isKindOfClass:[StudentClassesCDTVC class]]) {
+                [self prepareStudentViewController:(StudentClassesCDTVC *)destinationVC];
+            }
         }
+        //    else if ([segue.identifier isEqualToString:TEACHER_LOGIN]) {
+        //        if ([segue.destinationViewController isKindOfClass:[])
+        //    }
     }
-//    else if ([segue.identifier isEqualToString:TEACHER_LOGIN]) {
-//        if ([segue.destinationViewController isKindOfClass:[])
-//    }
+    
 }
 
 // Prepares a view controller for the student
@@ -155,7 +172,6 @@
                                  inManagedObjectContext:self.context];
     // Makes sure student exists (should always be true)
     if (student) {
-        studentCDTVC.title = student.username;
         studentCDTVC.student = student;
     }
     else {
