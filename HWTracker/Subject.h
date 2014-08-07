@@ -2,7 +2,7 @@
 //  Subject.h
 //  HWTracker
 //
-//  Created by Ruthwick Pathireddy on 8/2/14.
+//  Created by Ruthwick Pathireddy on 8/7/14.
 //  Copyright (c) 2014 Darkking. All rights reserved.
 //
 
@@ -14,26 +14,21 @@
 @interface Subject : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *students;
 @property (nonatomic, retain) NSSet *homework;
-@property (nonatomic, retain) NSSet *teachers;
+@property (nonatomic, retain) NSSet *students;
+@property (nonatomic, retain) Teacher *teacher;
 @end
 
 @interface Subject (CoreDataGeneratedAccessors)
-
-- (void)addStudentsObject:(Student *)value;
-- (void)removeStudentsObject:(Student *)value;
-- (void)addStudents:(NSSet *)values;
-- (void)removeStudents:(NSSet *)values;
 
 - (void)addHomeworkObject:(Homework *)value;
 - (void)removeHomeworkObject:(Homework *)value;
 - (void)addHomework:(NSSet *)values;
 - (void)removeHomework:(NSSet *)values;
 
-- (void)addTeachersObject:(Teacher *)value;
-- (void)removeTeachersObject:(Teacher *)value;
-- (void)addTeachers:(NSSet *)values;
-- (void)removeTeachers:(NSSet *)values;
+- (void)addStudentsObject:(Student *)value;
+- (void)removeStudentsObject:(Student *)value;
+- (void)addStudents:(NSSet *)values;
+- (void)removeStudents:(NSSet *)values;
 
 @end
