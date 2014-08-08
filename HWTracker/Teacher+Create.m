@@ -19,11 +19,9 @@
 {
     Teacher *teacher = nil;
     NSManagedObjectContext *context = [school managedObjectContext];
-    teacher = [self findTeacherWithName:name
-                               username:username
+    teacher = [self findTeacherWithUsername:username
                                password:password
                inNSManagedObjectContext:context];
-    
     
     // Checks if teacher already exists
     if (teacher) {
@@ -39,20 +37,17 @@
         teacher.fromSchool = school;
     }
     return teacher;
-
 }
 
 // Returns teacher that matches the properties
-+ (Teacher *)findTeacherWithName:(NSString *)name
-                        username:(NSString *)username
-                        password:(NSString *)password
-        inNSManagedObjectContext:(NSManagedObjectContext *)context
++ (Teacher *)findTeacherWithUsername:(NSString *)username
+                            password:(NSString *)password
+            inNSManagedObjectContext:(NSManagedObjectContext *)context;
 {
     // Makes a request to find the teacher
     Teacher *teacher = nil;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Teacher"];
-    request.predicate = [NSPredicate predicateWithFormat:@"(name = %@) AND (username = %@) AND (password = %@",
-                         name, username, password];
+    request.predicate = [NSPredicate predicateWithFormat:@"(username = %@) AND (password = %@)", username, password];
     
     // Finds matches for teacher
     NSError *error;

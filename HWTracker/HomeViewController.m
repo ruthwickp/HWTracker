@@ -9,10 +9,10 @@
 #import "HomeViewController.h"
 #import "DatabaseAvailability.h"
 #import <CoreData/CoreData.h>
-#import "Student+Create.h"
-#import "Teacher.h"
 #import "StudentClassesCDTVC.h"
-#import "School+Create.h"
+#import "TeacherClassesCDTVC.h"
+#import "Student+Create.h"
+#import "Teacher+Create.h"
 
 @interface HomeViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -31,10 +31,6 @@
                                                        queue:nil
                                                   usingBlock:^(NSNotification *note) {
                                                       self.context = note.userInfo[DatabaseContext];
-                                                      NSLog(@"%@", self.context);
-                                                      School *school = [School createSchoolWithName:@"Whitney" andSchoolCode:@"ASDF" inNSManagedObjectContext:self.context];
-                                                      [Student createStudentWithUsername:@"ruthwickp" andPassword:@"Ruthwick1995" fromSchool:school];
-
                                                   }];
 }
 
@@ -45,11 +41,6 @@
     // Removes keyboard when tapped
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeKeyboard)];
     [self.view addGestureRecognizer:tap];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
 }
 
 // Removes keyboard from view
@@ -157,9 +148,12 @@
                 [self prepareStudentViewController:(StudentClassesCDTVC *)destinationVC];
             }
         }
-        //    else if ([segue.identifier isEqualToString:TEACHER_LOGIN]) {
-        //        if ([segue.destinationViewController isKindOfClass:[])
-        //    }
+        // If the segue is for a teacher
+        else if ([segue.identifier isEqualToString:TEACHER_LOGIN]) {
+            if ([destinationVC isKindOfClass:[TeacherClassesCDTVC class]]) {
+                [self prepareTeacherViewController:(TeacherClassesCDTVC *)destinationVC];
+            }
+        }
     }
     
 }
@@ -176,6 +170,21 @@
     }
     else {
         NSLog(@"Student does not exist. Something wrong must have happened.");
+    }
+}
+
+// Prepares a view controller for the teacher
+- (void)prepareTeacherViewController:(TeacherClassesCDTVC *)teacherCDTVC
+{
+    Teacher *teacher = [Teacher findTeacherWithUsername:self.usernameTextField.text
+                                               password:self.passwordTextField.text
+                               inNSManagedObjectContext:self.context];
+    // Makes sure teacher exists (should always be true)
+    if (teacher) {
+        teacherCDTVC.teacher = teacher;
+    }
+    else {
+        NSLog(@"Teacher does not exists. Something wrong must have happened.");
     }
 }
 @end

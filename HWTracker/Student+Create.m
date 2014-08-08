@@ -55,7 +55,6 @@
         NSLog(@"Error in creating student");
     }
     else if ([matches count]) {
-        NSLog(@"Student exists");
         student = [matches firstObject];
     }
     

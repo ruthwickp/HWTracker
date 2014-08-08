@@ -19,8 +19,7 @@
                         fromSchool:(School *)school;
 
 // Returns teacher that matches the properties
-+ (Teacher *)findTeacherWithName:(NSString *)name
-                        username:(NSString *)username
++ (Teacher *)findTeacherWithUsername:(NSString *)username
                         password:(NSString *)password
         inNSManagedObjectContext:(NSManagedObjectContext *)context;
 
