@@ -35,9 +35,10 @@
 		7D65D47719942F9D003A0239 /* TeacherClassesCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D47619942F9D003A0239 /* TeacherClassesCDTVC.m */; };
 		7D65D47A199430EA003A0239 /* Teacher+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D479199430EA003A0239 /* Teacher+Create.m */; };
 		7D65D47F19943588003A0239 /* Subject+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D47E19943588003A0239 /* Subject+Create.m */; };
-		7D65D482199437DA003A0239 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D481199437DA003A0239 /* Student.m */; };
 		7D65D4881994385B003A0239 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D4871994385B003A0239 /* Subject.m */; };
 		7D65D48B19944CB1003A0239 /* Homework+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D48A19944CB1003A0239 /* Homework+Create.m */; };
+		7D65D48E1994588D003A0239 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D48D1994588D003A0239 /* RegistrationViewController.m */; };
+		7D65D49119948637003A0239 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D49019948637003A0239 /* Student.m */; };
 		7DEC122419933E4E0005F710 /* Student+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEC122319933E4E0005F710 /* Student+Create.m */; };
 /* End PBXBuildFile section */
 
@@ -98,12 +99,14 @@
 		7D65D479199430EA003A0239 /* Teacher+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Teacher+Create.m"; sourceTree = "<group>"; };
 		7D65D47D19943588003A0239 /* Subject+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Subject+Create.h"; sourceTree = "<group>"; };
 		7D65D47E19943588003A0239 /* Subject+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Subject+Create.m"; sourceTree = "<group>"; };
-		7D65D480199437DA003A0239 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		7D65D481199437DA003A0239 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		7D65D4861994385B003A0239 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
 		7D65D4871994385B003A0239 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
 		7D65D48919944CB1003A0239 /* Homework+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Homework+Create.h"; sourceTree = "<group>"; };
 		7D65D48A19944CB1003A0239 /* Homework+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Homework+Create.m"; sourceTree = "<group>"; };
+		7D65D48C1994588D003A0239 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		7D65D48D1994588D003A0239 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		7D65D48F19948637003A0239 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		7D65D49019948637003A0239 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		7DEC122219933E4E0005F710 /* Student+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+Create.h"; sourceTree = "<group>"; };
 		7DEC122319933E4E0005F710 /* Student+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+Create.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +225,8 @@
 		7D60216019929552006CC900 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7D65D48C1994588D003A0239 /* RegistrationViewController.h */,
+				7D65D48D1994588D003A0239 /* RegistrationViewController.m */,
 				7D65D46F19942AFD003A0239 /* TabBarInsideNavigationController.h */,
 				7D65D47019942AFD003A0239 /* TabBarInsideNavigationController.m */,
 				7D65D4661993F645003A0239 /* StudentClassesCDTVC.h */,
@@ -250,10 +255,10 @@
 		7D65D47B199431A7003A0239 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7D65D48F19948637003A0239 /* Student.h */,
+				7D65D49019948637003A0239 /* Student.m */,
 				7D65D4861994385B003A0239 /* Subject.h */,
 				7D65D4871994385B003A0239 /* Subject.m */,
-				7D65D480199437DA003A0239 /* Student.h */,
-				7D65D481199437DA003A0239 /* Student.m */,
 				7D65D46C1993FD40003A0239 /* School.h */,
 				7D65D46D1993FD40003A0239 /* School.m */,
 				7D234877198DE1EC00D4A802 /* Homework.h */,
@@ -389,12 +394,13 @@
 				7D65D47F19943588003A0239 /* Subject+Create.m in Sources */,
 				7D65D46B1993FC58003A0239 /* School+Create.m in Sources */,
 				7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */,
+				7D65D49119948637003A0239 /* Student.m in Sources */,
 				7D65D48B19944CB1003A0239 /* Homework+Create.m in Sources */,
 				7D65D47A199430EA003A0239 /* Teacher+Create.m in Sources */,
+				7D65D48E1994588D003A0239 /* RegistrationViewController.m in Sources */,
 				7D234870198DE1EC00D4A802 /* Teacher.m in Sources */,
 				7D2347F5198D88C500D4A802 /* main.m in Sources */,
 				7D65D4881994385B003A0239 /* Subject.m in Sources */,
-				7D65D482199437DA003A0239 /* Student.m in Sources */,
 				7D65D47419942EFA003A0239 /* ClassesCDTVC.m in Sources */,
 				7D234879198DE1EC00D4A802 /* Homework.m in Sources */,
 				7DEC122419933E4E0005F710 /* Student+Create.m in Sources */,

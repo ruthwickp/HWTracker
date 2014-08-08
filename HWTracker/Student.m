@@ -15,6 +15,7 @@
 
 @dynamic password;
 @dynamic username;
+@dynamic name;
 @dynamic classes;
 @dynamic fromSchool;
 

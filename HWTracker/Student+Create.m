@@ -12,9 +12,10 @@
 
 // Creates a student with a given username, password, and school
 // and returns it
-+ (Student *)createStudentWithUsername:(NSString *)username
-                           andPassword:(NSString *)password
-                            fromSchool:(School *)school
++ (Student *)createStudentWithName:(NSString *)name
+                          Username:(NSString *)username
+                          Password:(NSString *)password
+                        fromSchool:(School *)school;
 {
     // Finds the student currently exists in out context
     Student *student = nil;
@@ -30,6 +31,7 @@
     else {
         // Adds object to database and sets properties
         student = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:context];
+        student.name = name;
         student.username = username;
         student.password = password;
         student.fromSchool = school;

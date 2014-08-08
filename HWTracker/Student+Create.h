@@ -13,9 +13,10 @@
 
 // Creates a student with a given username, password, and school
 // and returns it
-+ (Student *)createStudentWithUsername:(NSString *)username
-                           andPassword:(NSString *)password
-                            fromSchool:(School *)school;
++ (Student *)createStudentWithName:(NSString *)name
+                          Username:(NSString *)username
+                          Password:(NSString *)password
+                        fromSchool:(School *)school;
 
 // Finds a student in core data with the given information
 // and returns it, nil if not found

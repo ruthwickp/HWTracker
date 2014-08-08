@@ -14,6 +14,7 @@
         <relationship name="teachers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Teacher" inverseName="fromSchool" inverseEntity="Teacher" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="classes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Subject" inverseName="students" inverseEntity="Subject" syncable="YES"/>
@@ -35,7 +36,7 @@
     <elements>
         <element name="Homework" positionX="-47" positionY="171" width="128" height="118"/>
         <element name="School" positionX="-612" positionY="140" width="128" height="103"/>
-        <element name="Student" positionX="-621" positionY="365" width="126" height="103"/>
+        <element name="Student" positionX="-621" positionY="365" width="126" height="118"/>
         <element name="Subject" positionX="-254" positionY="203" width="128" height="103"/>
         <element name="Teacher" positionX="-443" positionY="18" width="128" height="118"/>
     </elements>

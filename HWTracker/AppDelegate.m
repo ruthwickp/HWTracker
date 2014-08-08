@@ -87,7 +87,7 @@
         self.context = self.document.managedObjectContext;
         NSLog(@"%@", self.context);
         School *school = [School createSchoolWithName:@"Whitney" andSchoolCode:@"ASDF" inNSManagedObjectContext:self.context];
-        [Student createStudentWithUsername:@"ruthwickp" andPassword:@"Ruthwick1995" fromSchool:school];
+        [Student createStudentWithName:@"Ruthwick Pathireddy" Username:@"ruthwickp" Password:@"Ruthwick1995" fromSchool:school];
         [Teacher createTeacherWithName:@"Boss" username:@"sathwickp" password:@"asdf1234" fromSchool:school];
     }
 }
