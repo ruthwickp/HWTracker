@@ -54,7 +54,7 @@
     NSError *error;
     NSArray *matches = [context executeFetchRequest:request error:&error];
     if (!matches || error || [matches count] > 1) {
-        NSLog(@"Error in creating student");
+        NSLog(@"Error in finding student");
     }
     else if ([matches count]) {
         student = [matches firstObject];

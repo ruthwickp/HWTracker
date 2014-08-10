@@ -13,6 +13,7 @@
 #import "TeacherClassesCDTVC.h"
 #import "Student+Create.h"
 #import "Teacher+Create.h"
+#import "StudentRegistrationViewController.h"
 
 @interface HomeViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -155,7 +156,11 @@
             }
         }
     }
-    
+    // Segues to registration view controllers by passing in context
+    else if ([segue.destinationViewController isKindOfClass:[StudentRegistrationViewController class]]) {
+        StudentRegistrationViewController *studentRVC = segue.destinationViewController;
+        studentRVC.context = self.context;
+    }
 }
 
 // Prepares a view controller for the student
@@ -187,4 +192,15 @@
         NSLog(@"Teacher does not exists. Something wrong must have happened.");
     }
 }
+
+#pragma mark - Registration Action
+
+// Used for unwinding modal view controllers
+- (IBAction)registerPerson:(UIStoryboardSegue *)segue
+{
+    if ([segue.sourceViewController isKindOfClass:[StudentRegistrationViewController class]]) {
+        NSLog(@"Did click on done Student");
+    }
+}
+
 @end
