@@ -62,5 +62,28 @@
     return teacher;
 }
 
+// Returns a teacher with the following username
++ (Teacher *)findTeacherWithUsername:(NSString *)username
+            inNSManagedObjectContext:(NSManagedObjectContext *)context
+{
+    // Makes a request to find the teacher
+    Teacher *teacher = nil;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Teacher"];
+    request.predicate = [NSPredicate predicateWithFormat:@"username = %@", username];
+    
+    // Finds matches for teacher
+    NSError *error;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    if (error || !matches || [matches count] > 1) {
+        NSLog(@"Error when retrieving teacher with username");
+    }
+    else if ([matches count]) {
+        teacher = [matches firstObject];
+    }
+    
+    return teacher;
+}
+
+
 
 @end

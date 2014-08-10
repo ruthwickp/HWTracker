@@ -10,6 +10,7 @@
     <entity name="School" representedClassName="School" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="schoolCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teacherCode" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="fromSchool" inverseEntity="Student" syncable="YES"/>
         <relationship name="teachers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Teacher" inverseName="fromSchool" inverseEntity="Teacher" syncable="YES"/>
     </entity>
@@ -35,7 +36,7 @@
     </entity>
     <elements>
         <element name="Homework" positionX="-47" positionY="171" width="128" height="118"/>
-        <element name="School" positionX="-612" positionY="140" width="128" height="103"/>
+        <element name="School" positionX="-612" positionY="140" width="128" height="118"/>
         <element name="Student" positionX="-621" positionY="365" width="126" height="118"/>
         <element name="Subject" positionX="-254" positionY="203" width="128" height="103"/>
         <element name="Teacher" positionX="-443" positionY="18" width="128" height="118"/>

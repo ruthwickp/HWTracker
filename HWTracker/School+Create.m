@@ -13,7 +13,8 @@
 // Creates a school in core data and returns it
 + (School *)createSchoolWithName:(NSString *)name
                    andSchoolCode:(NSString *)code
-        inNSManagedObjectContext:(NSManagedObjectContext *)context
+                     TeacherCode:(NSString *)teacherCode
+        inNSManagedObjectContext:(NSManagedObjectContext *)context;
 {
     School *school = nil;
     school = [self findSchoolWithName:name
@@ -30,6 +31,7 @@
                                                inManagedObjectContext:context];
         school.name = name;
         school.schoolCode = code;
+        school.teacherCode = teacherCode;
     }
     return school;
 }
@@ -55,7 +57,6 @@
     }
     
     return school;
-    
 }
 
 

@@ -23,4 +23,8 @@
                         password:(NSString *)password
         inNSManagedObjectContext:(NSManagedObjectContext *)context;
 
+// Returns a teacher with the following username
++ (Teacher *)findTeacherWithUsername:(NSString *)username
+            inNSManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

@@ -24,4 +24,8 @@
                          andPassword:(NSString *)password
               inManagedObjectContext:(NSManagedObjectContext *)context;
 
+// Finds a student with the given username in core data
++ (Student *)findStudentWithUsername:(NSString *)username
+              inManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

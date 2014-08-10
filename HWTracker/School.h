@@ -2,7 +2,7 @@
 //  School.h
 //  HWTracker
 //
-//  Created by Ruthwick Pathireddy on 8/7/14.
+//  Created by Ruthwick Pathireddy on 8/10/14.
 //  Copyright (c) 2014 Darkking. All rights reserved.
 //
 
@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * schoolCode;
+@property (nonatomic, retain) NSString * teacherCode;
 @property (nonatomic, retain) NSSet *students;
 @property (nonatomic, retain) NSSet *teachers;
 @end

@@ -63,5 +63,28 @@
     return student;
 }
 
+// Finds a student with the given username in core data
++ (Student *)findStudentWithUsername:(NSString *)username
+              inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    // Makes a request for the student
+    Student *student = nil;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+    request.predicate = [NSPredicate predicateWithFormat:@"username = %@", username];
+    
+    // Finds if the student exists
+    NSError *error;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    if (!matches || error || [matches count] > 1) {
+        NSLog(@"Error in finding student with only username");
+    }
+    else if ([matches count]) {
+        student = [matches firstObject];
+    }
+    
+    return student;
+}
+
+
 
 @end

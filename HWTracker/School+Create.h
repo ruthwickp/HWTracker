@@ -13,6 +13,7 @@
 // Creates a school in core data and returns it
 + (School *)createSchoolWithName:(NSString *)name
                    andSchoolCode:(NSString *)code
+                     TeacherCode:(NSString *)teacherCode
         inNSManagedObjectContext:(NSManagedObjectContext *)context;
 
 // Finds the school in core data and returns it

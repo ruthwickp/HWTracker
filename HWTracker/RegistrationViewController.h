@@ -25,12 +25,13 @@
 - (BOOL)validLastName;
 - (BOOL)doesPasswordMatch;
 - (BOOL)isValidSchoolCode;
+- (BOOL)validUsername:(NSString *)username;
 
 // Stores school from user inputted textfield
 @property (nonatomic, strong) School *school;
 
-// Abstract method
-// Must override this for person specific registration
-- (BOOL)validUsername:(NSString *)username;
+// Displays an alert with the following message
+// with an ok button
+- (void)alert:(NSString *)msg;
 
 @end

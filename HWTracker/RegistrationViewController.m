@@ -9,6 +9,8 @@
 #import "RegistrationViewController.h"
 #import "NSString+CharacterMatching.h"
 #import "School.h"
+#import "Student+Create.h"
+#import "Teacher+Create.h"
 
 @interface RegistrationViewController ()
 @end
@@ -75,11 +77,24 @@
 }
 
 // Returns whether the username is unique and valid
-// Must override this methods for person specific
-// registration
+// in core data for both student and teacher registration
 - (BOOL)validUsername:(NSString *)username
 {
-    return NO;
+    // Checks if the username is valid
+    if ([username length] < 8 || [username length] > 32 || ![username isAlphaNumeric]) {
+        [self alert:@"Username must be between 8-32 characters and must contain only letters and numbers"];
+        return NO;
+    }
+    
+    // Finds if username already exists
+    Student *student = [Student findStudentWithUsername:username inManagedObjectContext:self.context];
+    Teacher *teacher = [Teacher findTeacherWithUsername:username inNSManagedObjectContext:self.context];
+    if (student || teacher) {
+        [self alert:@"Username is already taken. Choose another."];
+        return NO;
+    }
+    // Cannot find a match
+    return YES;
 }
 
 // Shows an alert view containing the following message

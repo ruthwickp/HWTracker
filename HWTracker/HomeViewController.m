@@ -14,6 +14,7 @@
 #import "Student+Create.h"
 #import "Teacher+Create.h"
 #import "StudentRegistrationViewController.h"
+#import "TeacherRegistrationViewController.h"
 
 @interface HomeViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -161,6 +162,10 @@
         StudentRegistrationViewController *studentRVC = segue.destinationViewController;
         studentRVC.context = self.context;
     }
+    else if ([segue.destinationViewController isKindOfClass:[TeacherRegistrationViewController class]]) {
+        TeacherRegistrationViewController *teacherRVC = segue.destinationViewController;
+        teacherRVC.context = self.context;
+    }
 }
 
 // Prepares a view controller for the student
@@ -200,6 +205,9 @@
 {
     if ([segue.sourceViewController isKindOfClass:[StudentRegistrationViewController class]]) {
         NSLog(@"Did click on done Student");
+    }
+    else if ([segue.sourceViewController isKindOfClass:[TeacherRegistrationViewController class]]) {
+        NSLog(@"Did click on done Teacher");
     }
 }
 
