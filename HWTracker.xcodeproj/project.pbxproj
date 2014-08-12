@@ -25,6 +25,7 @@
 		7D234870198DE1EC00D4A802 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D23486F198DE1EC00D4A802 /* Teacher.m */; };
 		7D234879198DE1EC00D4A802 /* Homework.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234878198DE1EC00D4A802 /* Homework.m */; };
 		7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D51076C198F2E1F00A71500 /* HomeViewController.m */; };
+		7D538C7B199992C0002CFB54 /* TeacherAddSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D538C7A199992C0002CFB54 /* TeacherAddSubjectViewController.m */; };
 		7D6021661992D5E1006CC900 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6021651992D5E1006CC900 /* CoreData.framework */; };
 		7D65D4651993F5F1003A0239 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D4641993F5F1003A0239 /* CoreDataTableViewController.m */; };
 		7D65D4681993F645003A0239 /* StudentClassesCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D4671993F645003A0239 /* StudentClassesCDTVC.m */; };
@@ -83,6 +84,8 @@
 		7D234878198DE1EC00D4A802 /* Homework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Homework.m; sourceTree = "<group>"; };
 		7D51076B198F2E1F00A71500 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		7D51076C198F2E1F00A71500 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		7D538C79199992C0002CFB54 /* TeacherAddSubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherAddSubjectViewController.h; sourceTree = "<group>"; };
+		7D538C7A199992C0002CFB54 /* TeacherAddSubjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherAddSubjectViewController.m; sourceTree = "<group>"; };
 		7D6021641992D144006CC900 /* DatabaseAvailability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatabaseAvailability.h; sourceTree = "<group>"; };
 		7D6021651992D5E1006CC900 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7D65D4631993F5F1003A0239 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -227,6 +230,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7D538C7C19999309002CFB54 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				7D65D48C1994588D003A0239 /* RegistrationViewController.h */,
+				7D65D48D1994588D003A0239 /* RegistrationViewController.m */,
+				7DD75C8A1995766A00B76FEA /* StudentRegistrationViewController.h */,
+				7DD75C8B1995766A00B76FEA /* StudentRegistrationViewController.m */,
+				7D6964291997C52100DA3A3B /* TeacherRegistrationViewController.h */,
+				7D69642A1997C52100DA3A3B /* TeacherRegistrationViewController.m */,
+			);
+			name = Registration;
+			sourceTree = "<group>";
+		};
+		7D538C7D19999359002CFB54 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7D65D47219942EFA003A0239 /* ClassesCDTVC.h */,
+				7D65D47319942EFA003A0239 /* ClassesCDTVC.m */,
+				7D65D4661993F645003A0239 /* StudentClassesCDTVC.h */,
+				7D65D4671993F645003A0239 /* StudentClassesCDTVC.m */,
+				7D65D47519942F9D003A0239 /* TeacherClassesCDTVC.h */,
+				7D65D47619942F9D003A0239 /* TeacherClassesCDTVC.m */,
+				7D538C79199992C0002CFB54 /* TeacherAddSubjectViewController.h */,
+				7D538C7A199992C0002CFB54 /* TeacherAddSubjectViewController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		7D60215F19929529006CC900 /* Core Data Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,26 +270,16 @@
 		7D60216019929552006CC900 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7DD75C8D199583C500B76FEA /* AddObjectViewController.h */,
-				7DD75C8E199583C500B76FEA /* AddObjectViewController.m */,
-				7D65D48C1994588D003A0239 /* RegistrationViewController.h */,
-				7D65D48D1994588D003A0239 /* RegistrationViewController.m */,
-				7DD75C8A1995766A00B76FEA /* StudentRegistrationViewController.h */,
-				7DD75C8B1995766A00B76FEA /* StudentRegistrationViewController.m */,
-				7D6964291997C52100DA3A3B /* TeacherRegistrationViewController.h */,
-				7D69642A1997C52100DA3A3B /* TeacherRegistrationViewController.m */,
-				7D65D46F19942AFD003A0239 /* TabBarInsideNavigationController.h */,
-				7D65D47019942AFD003A0239 /* TabBarInsideNavigationController.m */,
-				7D65D4661993F645003A0239 /* StudentClassesCDTVC.h */,
-				7D65D4671993F645003A0239 /* StudentClassesCDTVC.m */,
-				7D65D47519942F9D003A0239 /* TeacherClassesCDTVC.h */,
-				7D65D47619942F9D003A0239 /* TeacherClassesCDTVC.m */,
-				7D65D47219942EFA003A0239 /* ClassesCDTVC.h */,
-				7D65D47319942EFA003A0239 /* ClassesCDTVC.m */,
 				7D2347FD198D88C500D4A802 /* ViewController.h */,
 				7D2347FE198D88C500D4A802 /* ViewController.m */,
 				7D51076B198F2E1F00A71500 /* HomeViewController.h */,
 				7D51076C198F2E1F00A71500 /* HomeViewController.m */,
+				7DD75C8D199583C500B76FEA /* AddObjectViewController.h */,
+				7DD75C8E199583C500B76FEA /* AddObjectViewController.m */,
+				7D65D46F19942AFD003A0239 /* TabBarInsideNavigationController.h */,
+				7D65D47019942AFD003A0239 /* TabBarInsideNavigationController.m */,
+				7D538C7C19999309002CFB54 /* Registration */,
+				7D538C7D19999359002CFB54 /* Classes */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -417,6 +438,7 @@
 				7DD75C8F199583C500B76FEA /* AddObjectViewController.m in Sources */,
 				7D65D49119948637003A0239 /* Student.m in Sources */,
 				7D65D48B19944CB1003A0239 /* Homework+Create.m in Sources */,
+				7D538C7B199992C0002CFB54 /* TeacherAddSubjectViewController.m in Sources */,
 				7D65D47A199430EA003A0239 /* Teacher+Create.m in Sources */,
 				7D65D48E1994588D003A0239 /* RegistrationViewController.m in Sources */,
 				7D234870198DE1EC00D4A802 /* Teacher.m in Sources */,

@@ -281,16 +281,82 @@
             </objects>
             <point key="canvasLocation" x="1431" y="-1049"/>
         </scene>
-        <!--Table View Controller - Item-->
+        <!--Teacher Add Subject View Controller-->
+        <scene sceneID="DB4-UU-1F8">
+            <objects>
+                <viewController id="yYI-dH-JGc" customClass="TeacherAddSubjectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gH2-6l-OQC"/>
+                        <viewControllerLayoutGuide type="bottom" id="ScT-Qc-2eT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pgt-cd-kjy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7M-I8-9ff">
+                                <rect key="frame" x="20" y="20" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel" destination="yYI-dH-JGc" eventType="touchUpInside" id="fpk-bq-fs7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frb-eo-CL2">
+                                <rect key="frame" x="263" y="20" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pr1-G0-CBx" kind="unwind" identifier="Finished Adding Class" unwindAction="doneClicked:" id="AVS-Nv-OAL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Class" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuF-YM-5vH">
+                                <rect key="frame" x="121" y="24" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2n-ma-G7W">
+                                <rect key="frame" x="20" y="58" width="46" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Class Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uzr-9w-TWi">
+                                <rect key="frame" x="20" y="87" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yYI-dH-JGc" id="ha2-bG-hG5"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="classNameTextField" destination="uzr-9w-TWi" id="aqs-dv-S1E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="veT-ZM-Sva" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pr1-G0-CBx" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2175" y="-2308"/>
+        </scene>
+        <!--Teacher ClassesCDTVC - Classes-->
         <scene sceneID="ClX-7P-pCK">
             <objects>
-                <tableViewController id="lGS-Gs-Pw6" sceneMemberID="viewController">
+                <tableViewController id="lGS-Gs-Pw6" customClass="TeacherClassesCDTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bGP-iQ-ceM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qA8-7m-YfZ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Class Subject" id="qA8-7m-YfZ">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qA8-7m-YfZ" id="Xvx-p9-Lnq">
@@ -304,13 +370,16 @@
                             <outlet property="delegate" destination="lGS-Gs-Pw6" id="QmD-9S-Clq"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="f7G-tN-fwV"/>
+                    <tabBarItem key="tabBarItem" title="Classes" id="f7G-tN-fwV"/>
+                    <connections>
+                        <segue destination="yYI-dH-JGc" kind="modal" identifier="Teacher Add Subject" id="bkf-oR-StF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXk-Br-aY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2175" y="-1654"/>
         </scene>
-        <!--Table View Controller - Item-->
+        <!--Table View Controller - Deadlines-->
         <scene sceneID="OJC-UZ-2gv">
             <objects>
                 <tableViewController id="lWV-o2-CoG" sceneMemberID="viewController">
@@ -333,13 +402,13 @@
                             <outlet property="delegate" destination="lWV-o2-CoG" id="DWW-42-fbU"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Jzd-4F-ERJ"/>
+                    <tabBarItem key="tabBarItem" title="Deadlines" id="Jzd-4F-ERJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4LA-MB-10F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2175" y="-1049"/>
         </scene>
-        <!--Table View Controller - Item-->
+        <!--Table View Controller - Settings-->
         <scene sceneID="Lu1-b3-tyf">
             <objects>
                 <tableViewController id="V8R-K1-6UJ" sceneMemberID="viewController">
@@ -362,7 +431,7 @@
                             <outlet property="delegate" destination="V8R-K1-6UJ" id="7ph-2U-jpW"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="EoG-LL-uta"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="EoG-LL-uta"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Pf-Wm-OCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

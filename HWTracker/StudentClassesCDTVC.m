@@ -14,4 +14,9 @@
 
 @implementation StudentClassesCDTVC
 
+- (void)addButtonPressed
+{
+    NSLog(@"addbutton was pressed");
+}
+
 @end

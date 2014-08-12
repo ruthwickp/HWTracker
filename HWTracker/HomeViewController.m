@@ -85,43 +85,17 @@
 // Returns whether the student login was successful
 - (BOOL)studentLoginSuccessful
 {
-    BOOL match = NO;
-    // Makes a request to see if a student logged in
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
-    request.predicate = [NSPredicate predicateWithFormat:@"(username = %@) AND (password = %@)",
-                         self.usernameTextField.text, self.passwordTextField.text];
-    
-    // Determines if there is a match for student
-    NSError *error;
-    NSArray *matches = [self.context executeFetchRequest:request error:&error];
-    if (error || !matches || [matches count] > 1) {
-        NSLog(@"Error in retrieving login match for student");
-    }
-    else if ([matches count]) {
-        match = YES;
-    }
-    return match;
+    Student *student = [Student findStudentWithUsername:self.usernameTextField.text
+                                            andPassword:self.passwordTextField.text inManagedObjectContext:self.context];
+    return student ? YES : NO;
 }
 
 // Returns whether the teacher login was successful
 - (BOOL)teacherLoginSuccessful
 {
-    BOOL match = NO;
-    // Makes a request to see if a teacher logged in
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Teacher"];
-    request.predicate = [NSPredicate predicateWithFormat:@"(username = %@) AND (password = %@)",
-                         self.usernameTextField.text, self.passwordTextField.text];
-    
-    // Determines if there is a match for teacher
-    NSError *error;
-    NSArray *matches = [self.context executeFetchRequest:request error:&error];
-    if (error || !matches || [matches count] > 1) {
-        NSLog(@"Error in retrieving login match for teacher");
-    }
-    else if ([matches count]) {
-        match = YES;
-    }
-    return match;
+    Teacher *teacher = [Teacher findTeacherWithUsername:self.usernameTextField.text
+                                               password:self.passwordTextField.text inNSManagedObjectContext:self.context];
+    return teacher ? YES : NO;
 }
 
 
@@ -177,6 +151,7 @@
     // Makes sure student exists (should always be true)
     if (student) {
         studentCDTVC.student = student;
+        studentCDTVC.tabBarController.title = student.name;
     }
     else {
         NSLog(@"Student does not exist. Something wrong must have happened.");
@@ -192,6 +167,7 @@
     // Makes sure teacher exists (should always be true)
     if (teacher) {
         teacherCDTVC.teacher = teacher;
+        teacherCDTVC.tabBarController.title = teacher.name;
     }
     else {
         NSLog(@"Teacher does not exists. Something wrong must have happened.");

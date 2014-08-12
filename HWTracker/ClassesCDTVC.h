@@ -10,4 +10,7 @@
 
 @interface ClassesCDTVC : CoreDataTableViewController
 
+// Abstract method, must override them
+- (void)addButtonPressed;
+
 @end

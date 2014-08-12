@@ -9,6 +9,7 @@
 #import "ClassesCDTVC.h"
 #import "Teacher.h"
 
+// Displays classses that the teacher is teaching
 @interface TeacherClassesCDTVC : ClassesCDTVC
 
 @property (nonatomic, strong) Teacher *teacher;
