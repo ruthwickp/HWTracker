@@ -20,6 +20,8 @@
 
 @implementation AppDelegate
 
+#pragma mark - Creating Context
+
 // Posts a notification when someone sets the context
 - (void)setContext:(NSManagedObjectContext *)context
 {
@@ -87,8 +89,6 @@
         self.context = self.document.managedObjectContext;
         NSLog(@"%@", self.context);
         School *school = [School createSchoolWithName:@"Whitney" andSchoolCode:@"ASDF" TeacherCode:@"Teacher" inNSManagedObjectContext:self.context];
-        [Student createStudentWithName:@"Ruthwick Pathireddy" Username:@"ruthwickp" Password:@"Ruthwick1995" fromSchool:school];
-        [Teacher createTeacherWithName:@"Boss" username:@"sathwickp" password:@"asdf1234" fromSchool:school];
     }
 }
 

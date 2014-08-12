@@ -58,11 +58,11 @@
     // Configures cell
     Subject *subject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = subject.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Assignment(s)", [subject.homework count]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Assignments: %d", [subject.homework count]];
     return cell;
 }
 
-#pragma mark - Editing Operations
+#pragma mark - Navigation
 
 #define TEACHER_ADD_SUBJECT @"Teacher Add Subject"
 
@@ -71,8 +71,6 @@
 {
     [self performSegueWithIdentifier:TEACHER_ADD_SUBJECT sender:self];
 }
-
-#pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -85,11 +83,11 @@
     }
 }
 
+// Saves context when we added a subject
 - (IBAction)doneClicked:(UIStoryboardSegue *)segue
 {
     if ([segue.sourceViewController isKindOfClass:[TeacherAddSubjectViewController class]]) {
         NSLog(@"Did click on done");
-        [self resetFetchResultsController];
     }
 }
 
