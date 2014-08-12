@@ -8,6 +8,8 @@
 
 #import "CoreDataTableViewController.h"
 
+// Class deals with displaying and removing classes
+// for a particular NSManagedObject
 @interface ClassesCDTVC : CoreDataTableViewController
 
 // Abstract method, must override them

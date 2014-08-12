@@ -2,7 +2,7 @@
 //  Teacher.m
 //  HWTracker
 //
-//  Created by Ruthwick Pathireddy on 8/2/14.
+//  Created by Ruthwick Pathireddy on 8/12/14.
 //  Copyright (c) 2014 Darkking. All rights reserved.
 //
 
@@ -14,8 +14,8 @@
 @implementation Teacher
 
 @dynamic name;
-@dynamic username;
 @dynamic password;
+@dynamic username;
 @dynamic classes;
 @dynamic fromSchool;
 

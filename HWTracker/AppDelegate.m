@@ -88,7 +88,10 @@
     if (self.document.documentState == UIDocumentStateNormal) {
         self.context = self.document.managedObjectContext;
         NSLog(@"%@", self.context);
-        School *school = [School createSchoolWithName:@"Whitney" andSchoolCode:@"ASDF" TeacherCode:@"Teacher" inNSManagedObjectContext:self.context];
+        [School createSchoolWithName:@"Whitney"
+                       andSchoolCode:@"ASDF"
+                         TeacherCode:@"Teacher"
+            inNSManagedObjectContext:self.context];
     }
 }
 

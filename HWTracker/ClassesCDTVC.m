@@ -7,6 +7,7 @@
 //
 
 #import "ClassesCDTVC.h"
+#import "Subject.h"
 
 @interface ClassesCDTVC ()
 
@@ -43,6 +44,20 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         [[self.fetchedResultsController managedObjectContext] deleteObject:object];
     }
 }
+
+// Displays subjects using the fetchedResultsController
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Class Subject";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    // Configures cell
+    Subject *subject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = subject.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Assignments: %d", [subject.homework count]];
+    return cell;
+}
+
 
 
 @end

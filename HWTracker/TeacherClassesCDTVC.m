@@ -8,7 +8,7 @@
 
 #import "TeacherClassesCDTVC.h"
 #import "TeacherAddSubjectViewController.h"
-#import "Subject.h"
+#import "TeacherHomeworkCDTVC.h"
 
 @interface TeacherClassesCDTVC ()
 @property (strong, nonatomic) NSManagedObjectContext *context;
@@ -50,21 +50,10 @@
                                                                                    cacheName:nil];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *cellIdentifier = @"Class Subject";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    
-    // Configures cell
-    Subject *subject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = subject.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Assignments: %d", [subject.homework count]];
-    return cell;
-}
-
 #pragma mark - Navigation
 
 #define TEACHER_ADD_SUBJECT @"Teacher Add Subject"
+#define CLASS_HOMEWORK @"Class Homework"
 
 // Modally segues when button is pressed
 - (void)addButtonPressed
@@ -79,6 +68,18 @@
         if ([segue.identifier isEqualToString:TEACHER_ADD_SUBJECT]) {
             TeacherAddSubjectViewController *teacherASVC = segue.destinationViewController;
             teacherASVC.teacher = self.teacher;
+        }
+    }
+    // Segues to display assignments for a given class
+    else if ([segue.destinationViewController isKindOfClass:[TeacherHomeworkCDTVC class]]) {
+        if ([segue.identifier isEqualToString:CLASS_HOMEWORK]) {
+            if ([sender isKindOfClass:[UITableViewCell class]]) {
+                NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+                TeacherHomeworkCDTVC *teacherHCDTVC = segue.destinationViewController;
+                Subject *subject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+                teacherHCDTVC.title = subject ? subject.name : nil;
+                teacherHCDTVC.subject = subject ? subject : nil;
+            }
         }
     }
 }

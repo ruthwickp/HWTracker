@@ -2,7 +2,7 @@
 //  Student.h
 //  HWTracker
 //
-//  Created by Ruthwick Pathireddy on 8/7/14.
+//  Created by Ruthwick Pathireddy on 8/12/14.
 //  Copyright (c) 2014 Darkking. All rights reserved.
 //
 
@@ -13,9 +13,9 @@
 
 @interface Student : NSManagedObject
 
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * password;
 @property (nonatomic, retain) NSString * username;
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *classes;
 @property (nonatomic, retain) School *fromSchool;
 @end

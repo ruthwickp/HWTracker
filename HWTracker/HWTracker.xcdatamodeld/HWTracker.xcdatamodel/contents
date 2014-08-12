@@ -11,8 +11,8 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="schoolCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teacherCode" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="fromSchool" inverseEntity="Student" syncable="YES"/>
-        <relationship name="teachers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Teacher" inverseName="fromSchool" inverseEntity="Teacher" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Student" inverseName="fromSchool" inverseEntity="Student" syncable="YES"/>
+        <relationship name="teachers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Teacher" inverseName="fromSchool" inverseEntity="Teacher" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,7 +23,7 @@
     </entity>
     <entity name="Subject" representedClassName="Subject" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="homework" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Homework" inverseName="inClass" inverseEntity="Homework" syncable="YES"/>
+        <relationship name="homework" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Homework" inverseName="inClass" inverseEntity="Homework" syncable="YES"/>
         <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="classes" inverseEntity="Student" syncable="YES"/>
         <relationship name="teacher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" inverseName="classes" inverseEntity="Teacher" syncable="YES"/>
     </entity>
@@ -31,7 +31,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="classes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Subject" inverseName="teacher" inverseEntity="Subject" syncable="YES"/>
+        <relationship name="classes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Subject" inverseName="teacher" inverseEntity="Subject" syncable="YES"/>
         <relationship name="fromSchool" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="School" inverseName="teachers" inverseEntity="School" syncable="YES"/>
     </entity>
     <elements>

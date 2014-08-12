@@ -379,6 +379,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Cw2-s2-dOE" kind="push" identifier="Class Homework" id="oeQ-sI-Upr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -394,6 +397,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXk-Br-aY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2175" y="-1654"/>
+        </scene>
+        <!--Teacher HomeworkCDTVC-->
+        <scene sceneID="NSZ-vh-l1u">
+            <objects>
+                <tableViewController id="Cw2-s2-dOE" customClass="TeacherHomeworkCDTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8Co-Cd-UFL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Homework" textLabel="jeH-wx-NOZ" detailTextLabel="1Bm-Fn-OiF" style="IBUITableViewCellStyleSubtitle" id="mFI-EO-c0U">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mFI-EO-c0U" id="mg0-dM-idx">
+                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jeH-wx-NOZ">
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Bm-Fn-OiF">
+                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Cw2-s2-dOE" id="nZx-V6-6VN"/>
+                            <outlet property="delegate" destination="Cw2-s2-dOE" id="zGc-kw-5wm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="6PM-wB-65S"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIB-4s-GY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2827" y="-1654"/>
         </scene>
         <!--Table View Controller - Deadlines-->
         <scene sceneID="OJC-UZ-2gv">
