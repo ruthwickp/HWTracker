@@ -7,6 +7,8 @@
 //
 
 #import "TeacherHomeworkCDTVC.h"
+#import "AddHomeworkViewController.h"
+#import "Homework.h"
 
 @interface TeacherHomeworkCDTVC ()
 
@@ -14,36 +16,70 @@
 
 @implementation TeacherHomeworkCDTVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+#pragma mark - Editing
 
+// Displays edit button on the right hand side of view controller
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
+// When editing, removes back button and creates an add button
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super setEditing:editing animated:animated];
+    if (editing) {
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                   target:self
+                                                                                   action:@selector(createHomework)];
+        self.navigationItem.leftBarButtonItem = addButton;
+    }
+    else {
+        self.navigationItem.leftBarButtonItem = nil;
+    }
 }
 
-/*
+// Allows homeworks to be deleted from class
+- (void)tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Homework *homework = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [[self.fetchedResultsController managedObjectContext] deleteObject:homework];
+    }
+}
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+#define CREATE_HOMEWORK @"Create Homework"
+
+// Modally segues to another view controller to create
+// the homework
+- (void)createHomework
+{
+    [self performSegueWithIdentifier:CREATE_HOMEWORK sender:self];
+}
+
+// Segues to create homework
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.destinationViewController isKindOfClass:[AddHomeworkViewController class]]) {
+        if ([segue.identifier isEqualToString:CREATE_HOMEWORK]) {
+            AddHomeworkViewController *addHomeworkVC = segue.destinationViewController;
+            addHomeworkVC.subject = self.subject;
+        }
+    }
 }
-*/
+
+// Unwind segue
+- (IBAction)createdHomework:(UIStoryboardSegue *)segue
+{
+    if ([segue.sourceViewController isKindOfClass:[AddHomeworkViewController class]]) {
+        NSLog(@"Done clicked. Added Homework");
+    }
+}
+
 
 @end

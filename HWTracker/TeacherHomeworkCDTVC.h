@@ -8,6 +8,8 @@
 
 #import "HomeworkCDTVC.h"
 
+// Class allows teacher to edit homework assignments and
+// add new ones
 @interface TeacherHomeworkCDTVC : HomeworkCDTVC
 
 @end

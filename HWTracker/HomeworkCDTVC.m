@@ -23,11 +23,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Homework createHomeworkWithTitle:@"FirstHomework"
-                                 info:@"Pages: 10-12341234"
-                              dueDate:[NSDate date]
-                               status:[NSNumber numberWithBool:NO]
-                              inClass:self.subject];
     [self initializeFetchResultsController];
 }
 
@@ -38,7 +33,7 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Homework"];
     request.predicate = [NSPredicate predicateWithFormat:@"inClass = %@", self.subject];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"dueDate"
-                                                              ascending:YES],
+                                                              ascending:NO],
                                 [NSSortDescriptor sortDescriptorWithKey:@"title"
                                                               ascending:YES
                                                                selector:@selector(localizedStandardCompare:)]];
