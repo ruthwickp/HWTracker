@@ -23,6 +23,8 @@
 		7D234814198D88C500D4A802 /* HWTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D234813198D88C500D4A802 /* HWTrackerTests.m */; };
 		7D23481F198DDA0A00D4A802 /* HWTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D23481D198DDA0A00D4A802 /* HWTracker.xcdatamodeld */; };
 		7D406DDA199BD612008ECEDB /* AddHomeworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D406DD9199BD612008ECEDB /* AddHomeworkViewController.m */; };
+		7D406DDE199C11FA008ECEDB /* DisplayHomeworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D406DDD199C11FA008ECEDB /* DisplayHomeworkViewController.m */; };
+		7D406DE1199C1ABB008ECEDB /* TeacherDisplayHomeworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D406DE0199C1ABB008ECEDB /* TeacherDisplayHomeworkViewController.m */; };
 		7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D51076C198F2E1F00A71500 /* HomeViewController.m */; };
 		7D538C7B199992C0002CFB54 /* TeacherAddSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D538C7A199992C0002CFB54 /* TeacherAddSubjectViewController.m */; };
 		7D6021661992D5E1006CC900 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6021651992D5E1006CC900 /* CoreData.framework */; };
@@ -83,6 +85,10 @@
 		7D23481E198DDA0A00D4A802 /* HWTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HWTracker.xcdatamodel; sourceTree = "<group>"; };
 		7D406DD8199BD612008ECEDB /* AddHomeworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddHomeworkViewController.h; sourceTree = "<group>"; };
 		7D406DD9199BD612008ECEDB /* AddHomeworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddHomeworkViewController.m; sourceTree = "<group>"; };
+		7D406DDC199C11FA008ECEDB /* DisplayHomeworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayHomeworkViewController.h; sourceTree = "<group>"; };
+		7D406DDD199C11FA008ECEDB /* DisplayHomeworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayHomeworkViewController.m; sourceTree = "<group>"; };
+		7D406DDF199C1ABB008ECEDB /* TeacherDisplayHomeworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherDisplayHomeworkViewController.h; sourceTree = "<group>"; };
+		7D406DE0199C1ABB008ECEDB /* TeacherDisplayHomeworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherDisplayHomeworkViewController.m; sourceTree = "<group>"; };
 		7D51076B198F2E1F00A71500 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		7D51076C198F2E1F00A71500 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		7D538C79199992C0002CFB54 /* TeacherAddSubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherAddSubjectViewController.h; sourceTree = "<group>"; };
@@ -248,6 +254,10 @@
 				7DAF0BEC199AC12E007021B5 /* TeacherHomeworkCDTVC.m */,
 				7D406DD8199BD612008ECEDB /* AddHomeworkViewController.h */,
 				7D406DD9199BD612008ECEDB /* AddHomeworkViewController.m */,
+				7D406DDC199C11FA008ECEDB /* DisplayHomeworkViewController.h */,
+				7D406DDD199C11FA008ECEDB /* DisplayHomeworkViewController.m */,
+				7D406DDF199C1ABB008ECEDB /* TeacherDisplayHomeworkViewController.h */,
+				7D406DE0199C1ABB008ECEDB /* TeacherDisplayHomeworkViewController.m */,
 			);
 			name = Homework;
 			sourceTree = "<group>";
@@ -448,8 +458,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D2347FF198D88C500D4A802 /* ViewController.m in Sources */,
+				7D406DE1199C1ABB008ECEDB /* TeacherDisplayHomeworkViewController.m in Sources */,
 				7D406DDA199BD612008ECEDB /* AddHomeworkViewController.m in Sources */,
 				7D65D47719942F9D003A0239 /* TeacherClassesCDTVC.m in Sources */,
+				7D406DDE199C11FA008ECEDB /* DisplayHomeworkViewController.m in Sources */,
 				7D23481F198DDA0A00D4A802 /* HWTracker.xcdatamodeld in Sources */,
 				7DAF0BF3199AC4C4007021B5 /* School.m in Sources */,
 				7DAF0BF9199AC4C4007021B5 /* Subject.m in Sources */,

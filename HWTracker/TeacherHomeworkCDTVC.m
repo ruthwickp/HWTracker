@@ -8,6 +8,7 @@
 
 #import "TeacherHomeworkCDTVC.h"
 #import "AddHomeworkViewController.h"
+#import "TeacherDisplayHomeworkViewController.h"
 #import "Homework.h"
 
 @interface TeacherHomeworkCDTVC ()
@@ -69,6 +70,13 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         if ([segue.identifier isEqualToString:CREATE_HOMEWORK]) {
             AddHomeworkViewController *addHomeworkVC = segue.destinationViewController;
             addHomeworkVC.subject = self.subject;
+        }
+    }
+    else if ([segue.destinationViewController isKindOfClass:[TeacherDisplayHomeworkViewController class]]) {
+        if ([sender isKindOfClass:[UITableViewCell class]]) {
+            NSIndexPath *indexpath = [self.tableView indexPathForCell:sender];
+            TeacherDisplayHomeworkViewController *teacherDisplayHVC = segue.destinationViewController;
+            teacherDisplayHVC.homework = [self.fetchedResultsController objectAtIndexPath:indexpath];
         }
     }
 }
