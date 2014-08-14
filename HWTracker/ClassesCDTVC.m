@@ -18,16 +18,15 @@
 // Displays the add button to the view controller on the right
 // and displays the edit button on the view controller to the
 // left
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewWillAppear:animated];
     self.tabBarController.navigationItem.leftBarButtonItem = self.editButtonItem;
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                                target:self
                                                                                action:@selector(addButtonPressed)];
     self.tabBarController.navigationItem.rightBarButtonItem = addButton;
 }
-
 
 // Abstract method, must override
 - (void)addButtonPressed

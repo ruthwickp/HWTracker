@@ -63,15 +63,16 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     [self performSegueWithIdentifier:CREATE_HOMEWORK sender:self];
 }
 
-// Segues to create homework
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    // Segues to create homework
     if ([segue.destinationViewController isKindOfClass:[AddHomeworkViewController class]]) {
         if ([segue.identifier isEqualToString:CREATE_HOMEWORK]) {
             AddHomeworkViewController *addHomeworkVC = segue.destinationViewController;
             addHomeworkVC.subject = self.subject;
         }
     }
+    // Segues to display homework
     else if ([segue.destinationViewController isKindOfClass:[TeacherDisplayHomeworkViewController class]]) {
         if ([sender isKindOfClass:[UITableViewCell class]]) {
             NSIndexPath *indexpath = [self.tableView indexPathForCell:sender];

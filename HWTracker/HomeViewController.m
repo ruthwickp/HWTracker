@@ -15,6 +15,7 @@
 #import "Teacher+Create.h"
 #import "StudentRegistrationViewController.h"
 #import "TeacherRegistrationViewController.h"
+#import "LoginNotification.h"
 
 @interface HomeViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -148,10 +149,13 @@
     Student *student = [Student findStudentWithUsername:self.usernameTextField.text
                                             andPassword:self.passwordTextField.text
                                  inManagedObjectContext:self.context];
-    // Makes sure student exists (should always be true)
+    // Makes sure student exists (should always be true) and posts notification
     if (student) {
         studentCDTVC.student = student;
         studentCDTVC.tabBarController.title = student.name;
+        [[NSNotificationCenter defaultCenter] postNotificationName:STUDENT_LOGIN_NOTIFICATION
+                                                            object:self
+                                                          userInfo:@{STUDENT_LOGIN_CONTEXT: student}];
     }
     else {
         NSLog(@"Student does not exist. Something wrong must have happened.");
@@ -164,10 +168,13 @@
     Teacher *teacher = [Teacher findTeacherWithUsername:self.usernameTextField.text
                                                password:self.passwordTextField.text
                                inNSManagedObjectContext:self.context];
-    // Makes sure teacher exists (should always be true)
+    // Makes sure teacher exists (should always be true) and posts notification
     if (teacher) {
         teacherCDTVC.teacher = teacher;
         teacherCDTVC.tabBarController.title = teacher.name;
+        [[NSNotificationCenter defaultCenter] postNotificationName:TEACHER_LOGIN_NOTIFICATION
+                                                            object:self
+                                                          userInfo:@{TEACHER_LOGIN_CONTEXT: teacher}];
     }
     else {
         NSLog(@"Teacher does not exists. Something wrong must have happened.");
