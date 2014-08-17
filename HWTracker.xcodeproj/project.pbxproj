@@ -28,6 +28,12 @@
 		7D406DE1199C1ABB008ECEDB /* TeacherDisplayHomeworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D406DE0199C1ABB008ECEDB /* TeacherDisplayHomeworkViewController.m */; };
 		7D406DE4199C6C80008ECEDB /* HomeworkDeadlinesCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D406DE3199C6C80008ECEDB /* HomeworkDeadlinesCDTVC.m */; };
 		7D485F0F19A0F9A2004FFF10 /* StudentHomeworkCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D485F0E19A0F9A2004FFF10 /* StudentHomeworkCDTVC.m */; };
+		7D485F1219A113CD004FFF10 /* Homework.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D485F1119A113CD004FFF10 /* Homework.m */; };
+		7D485F1519A113CE004FFF10 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D485F1419A113CE004FFF10 /* Subject.m */; };
+		7D485F1819A113CE004FFF10 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D485F1719A113CE004FFF10 /* Student.m */; };
+		7D485F1B19A113CE004FFF10 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D485F1A19A113CE004FFF10 /* School.m */; };
+		7D485F1E19A113CE004FFF10 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D485F1D19A113CE004FFF10 /* Teacher.m */; };
+		7D485F2119A12104004FFF10 /* NSManagedObject+Clone.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D485F2019A12104004FFF10 /* NSManagedObject+Clone.m */; };
 		7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D51076C198F2E1F00A71500 /* HomeViewController.m */; };
 		7D538C7B199992C0002CFB54 /* TeacherAddSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D538C7A199992C0002CFB54 /* TeacherAddSubjectViewController.m */; };
 		7D6021661992D5E1006CC900 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6021651992D5E1006CC900 /* CoreData.framework */; };
@@ -45,11 +51,6 @@
 		7D808A921996700700F85754 /* NSString+CharacterMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D808A911996700700F85754 /* NSString+CharacterMatching.m */; };
 		7DAF0BEA199AC112007021B5 /* HomeworkCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF0BE9199AC112007021B5 /* HomeworkCDTVC.m */; };
 		7DAF0BED199AC12E007021B5 /* TeacherHomeworkCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF0BEC199AC12E007021B5 /* TeacherHomeworkCDTVC.m */; };
-		7DAF0BF0199AC4C3007021B5 /* Homework.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF0BEF199AC4C3007021B5 /* Homework.m */; };
-		7DAF0BF3199AC4C4007021B5 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF0BF2199AC4C4007021B5 /* School.m */; };
-		7DAF0BF6199AC4C4007021B5 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF0BF5199AC4C4007021B5 /* Student.m */; };
-		7DAF0BF9199AC4C4007021B5 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF0BF8199AC4C4007021B5 /* Subject.m */; };
-		7DAF0BFC199AC4C4007021B5 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF0BFB199AC4C4007021B5 /* Teacher.m */; };
 		7DBD2AA0199D15D100994DAF /* TeacherHomeworkDeadlinesCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBD2A9F199D15D100994DAF /* TeacherHomeworkDeadlinesCDTVC.m */; };
 		7DD75C8C1995766A00B76FEA /* StudentRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD75C8B1995766A00B76FEA /* StudentRegistrationViewController.m */; };
 		7DD75C8F199583C500B76FEA /* AddObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD75C8E199583C500B76FEA /* AddObjectViewController.m */; };
@@ -99,6 +100,18 @@
 		7D406DE3199C6C80008ECEDB /* HomeworkDeadlinesCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeworkDeadlinesCDTVC.m; sourceTree = "<group>"; };
 		7D485F0D19A0F9A2004FFF10 /* StudentHomeworkCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentHomeworkCDTVC.h; sourceTree = "<group>"; };
 		7D485F0E19A0F9A2004FFF10 /* StudentHomeworkCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentHomeworkCDTVC.m; sourceTree = "<group>"; };
+		7D485F1019A113CD004FFF10 /* Homework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Homework.h; sourceTree = "<group>"; };
+		7D485F1119A113CD004FFF10 /* Homework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Homework.m; sourceTree = "<group>"; };
+		7D485F1319A113CE004FFF10 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		7D485F1419A113CE004FFF10 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
+		7D485F1619A113CE004FFF10 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		7D485F1719A113CE004FFF10 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		7D485F1919A113CE004FFF10 /* School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = School.h; sourceTree = "<group>"; };
+		7D485F1A19A113CE004FFF10 /* School.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = School.m; sourceTree = "<group>"; };
+		7D485F1C19A113CE004FFF10 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		7D485F1D19A113CE004FFF10 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
+		7D485F1F19A12104004FFF10 /* NSManagedObject+Clone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Clone.h"; sourceTree = "<group>"; };
+		7D485F2019A12104004FFF10 /* NSManagedObject+Clone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Clone.m"; sourceTree = "<group>"; };
 		7D51076B198F2E1F00A71500 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		7D51076C198F2E1F00A71500 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		7D538C79199992C0002CFB54 /* TeacherAddSubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherAddSubjectViewController.h; sourceTree = "<group>"; };
@@ -133,16 +146,6 @@
 		7DAF0BE9199AC112007021B5 /* HomeworkCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeworkCDTVC.m; sourceTree = "<group>"; };
 		7DAF0BEB199AC12E007021B5 /* TeacherHomeworkCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherHomeworkCDTVC.h; sourceTree = "<group>"; };
 		7DAF0BEC199AC12E007021B5 /* TeacherHomeworkCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherHomeworkCDTVC.m; sourceTree = "<group>"; };
-		7DAF0BEE199AC4C3007021B5 /* Homework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Homework.h; sourceTree = "<group>"; };
-		7DAF0BEF199AC4C3007021B5 /* Homework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Homework.m; sourceTree = "<group>"; };
-		7DAF0BF1199AC4C4007021B5 /* School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = School.h; sourceTree = "<group>"; };
-		7DAF0BF2199AC4C4007021B5 /* School.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = School.m; sourceTree = "<group>"; };
-		7DAF0BF4199AC4C4007021B5 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		7DAF0BF5199AC4C4007021B5 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		7DAF0BF7199AC4C4007021B5 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
-		7DAF0BF8199AC4C4007021B5 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
-		7DAF0BFA199AC4C4007021B5 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
-		7DAF0BFB199AC4C4007021B5 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		7DBD2A9E199D15D100994DAF /* TeacherHomeworkDeadlinesCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherHomeworkDeadlinesCDTVC.h; sourceTree = "<group>"; };
 		7DBD2A9F199D15D100994DAF /* TeacherHomeworkDeadlinesCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherHomeworkDeadlinesCDTVC.m; sourceTree = "<group>"; };
 		7DBD2AA2199D1A0F00994DAF /* LoginNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginNotification.h; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 				7D2347FA198D88C500D4A802 /* Main.storyboard */,
 				7D808A901996700700F85754 /* NSString+CharacterMatching.h */,
 				7D808A911996700700F85754 /* NSString+CharacterMatching.m */,
+				7D485F1F19A12104004FFF10 /* NSManagedObject+Clone.h */,
+				7D485F2019A12104004FFF10 /* NSManagedObject+Clone.m */,
 				7DBD2AA2199D1A0F00994DAF /* LoginNotification.h */,
 				7D60216019929552006CC900 /* ViewControllers */,
 				7D60215F19929529006CC900 /* Core Data Model */,
@@ -359,16 +364,16 @@
 		7D65D47B199431A7003A0239 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7DAF0BFA199AC4C4007021B5 /* Teacher.h */,
-				7DAF0BFB199AC4C4007021B5 /* Teacher.m */,
-				7DAF0BF7199AC4C4007021B5 /* Subject.h */,
-				7DAF0BF8199AC4C4007021B5 /* Subject.m */,
-				7DAF0BF4199AC4C4007021B5 /* Student.h */,
-				7DAF0BF5199AC4C4007021B5 /* Student.m */,
-				7DAF0BF1199AC4C4007021B5 /* School.h */,
-				7DAF0BF2199AC4C4007021B5 /* School.m */,
-				7DAF0BEE199AC4C3007021B5 /* Homework.h */,
-				7DAF0BEF199AC4C3007021B5 /* Homework.m */,
+				7D485F1C19A113CE004FFF10 /* Teacher.h */,
+				7D485F1D19A113CE004FFF10 /* Teacher.m */,
+				7D485F1919A113CE004FFF10 /* School.h */,
+				7D485F1A19A113CE004FFF10 /* School.m */,
+				7D485F1619A113CE004FFF10 /* Student.h */,
+				7D485F1719A113CE004FFF10 /* Student.m */,
+				7D485F1319A113CE004FFF10 /* Subject.h */,
+				7D485F1419A113CE004FFF10 /* Subject.m */,
+				7D485F1019A113CD004FFF10 /* Homework.h */,
+				7D485F1119A113CD004FFF10 /* Homework.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -493,33 +498,34 @@
 				7D65D47719942F9D003A0239 /* TeacherClassesCDTVC.m in Sources */,
 				7D406DDE199C11FA008ECEDB /* DisplayHomeworkViewController.m in Sources */,
 				7D23481F198DDA0A00D4A802 /* HWTracker.xcdatamodeld in Sources */,
-				7DAF0BF3199AC4C4007021B5 /* School.m in Sources */,
-				7DAF0BF9199AC4C4007021B5 /* Subject.m in Sources */,
 				7D65D4651993F5F1003A0239 /* CoreDataTableViewController.m in Sources */,
 				7D65D4681993F645003A0239 /* StudentClassesCDTVC.m in Sources */,
+				7D485F1E19A113CE004FFF10 /* Teacher.m in Sources */,
 				7D2347F9198D88C500D4A802 /* AppDelegate.m in Sources */,
-				7DAF0BFC199AC4C4007021B5 /* Teacher.m in Sources */,
 				7D65D47119942AFD003A0239 /* TabBarInsideNavigationController.m in Sources */,
 				7D69642B1997C52100DA3A3B /* TeacherRegistrationViewController.m in Sources */,
 				7DAF0BEA199AC112007021B5 /* HomeworkCDTVC.m in Sources */,
 				7D04A24C199D74660052BC59 /* StudentAddSubjectViewController.m in Sources */,
 				7D65D47F19943588003A0239 /* Subject+Create.m in Sources */,
-				7DAF0BF6199AC4C4007021B5 /* Student.m in Sources */,
 				7D65D46B1993FC58003A0239 /* School+Create.m in Sources */,
+				7D485F1519A113CE004FFF10 /* Subject.m in Sources */,
 				7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */,
 				7DAF0BED199AC12E007021B5 /* TeacherHomeworkCDTVC.m in Sources */,
-				7DAF0BF0199AC4C3007021B5 /* Homework.m in Sources */,
 				7DD75C8F199583C500B76FEA /* AddObjectViewController.m in Sources */,
 				7D485F0F19A0F9A2004FFF10 /* StudentHomeworkCDTVC.m in Sources */,
 				7D65D48B19944CB1003A0239 /* Homework+Create.m in Sources */,
 				7D538C7B199992C0002CFB54 /* TeacherAddSubjectViewController.m in Sources */,
 				7D65D47A199430EA003A0239 /* Teacher+Create.m in Sources */,
 				7D65D48E1994588D003A0239 /* RegistrationViewController.m in Sources */,
+				7D485F1219A113CD004FFF10 /* Homework.m in Sources */,
 				7D2347F5198D88C500D4A802 /* main.m in Sources */,
 				7D808A921996700700F85754 /* NSString+CharacterMatching.m in Sources */,
 				7D406DE4199C6C80008ECEDB /* HomeworkDeadlinesCDTVC.m in Sources */,
 				7D65D47419942EFA003A0239 /* ClassesCDTVC.m in Sources */,
 				7DD75C8C1995766A00B76FEA /* StudentRegistrationViewController.m in Sources */,
+				7D485F2119A12104004FFF10 /* NSManagedObject+Clone.m in Sources */,
+				7D485F1B19A113CE004FFF10 /* School.m in Sources */,
+				7D485F1819A113CE004FFF10 /* Student.m in Sources */,
 				7DEC122419933E4E0005F710 /* Student+Create.m in Sources */,
 				7DBD2AA0199D15D100994DAF /* TeacherHomeworkDeadlinesCDTVC.m in Sources */,
 			);

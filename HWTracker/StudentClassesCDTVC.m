@@ -9,6 +9,7 @@
 #import "StudentClassesCDTVC.h"
 #import "StudentAddSubjectViewController.h"
 #import "Subject.h"
+#import "StudentHomeworkCDTVC.h"
 
 @interface StudentClassesCDTVC ()
 @property (nonatomic, strong) NSManagedObjectContext *context;
@@ -31,15 +32,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self resetFetchResultsController];
+    [self initializeFetchResultsController];
 }
 
 // Sets the fetched results controller
-- (void)resetFetchResultsController
+- (void)initializeFetchResultsController
 {
     // Makes a request for the given entity
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Subject"];
-    request.predicate = [NSPredicate predicateWithFormat:@"ANY students IN %@", @[self.student]];
+    request.predicate = [NSPredicate predicateWithFormat:@"student = %@", @[self.student]];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
                                                               ascending:YES
                                                                selector:@selector(localizedStandardCompare:)]];
@@ -48,6 +49,18 @@
                                                                         managedObjectContext:self.context
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
+}
+
+// When student deletes a class, we delete the subject
+- (void)tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete subject with the following information
+        Subject *subject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [[self.fetchedResultsController managedObjectContext] deleteObject:subject];
+    }
 }
 
 #pragma mark - Navigation
@@ -74,21 +87,21 @@
             }
         }
     }
-//    // Segues to display assignments for a given class
-//    else if ([segue.destinationViewController isKindOfClass:[TeacherHomeworkCDTVC class]]) {
-//        if ([segue.identifier isEqualToString:CLASS_HOMEWORK]) {
-//            if ([sender isKindOfClass:[UITableViewCell class]]) {
-//                NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-//                TeacherHomeworkCDTVC *teacherHCDTVC = segue.destinationViewController;
-//                Subject *subject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//                teacherHCDTVC.title = subject ? subject.name : nil;
-//                teacherHCDTVC.subject = subject ? subject : nil;
-//            }
-//        }
-//    }
+    // Segues to display assignments for a given class
+    else if ([segue.destinationViewController isKindOfClass:[StudentHomeworkCDTVC class]]) {
+        if ([segue.identifier isEqualToString:CLASS_HOMEWORK]) {
+            if ([sender isKindOfClass:[UITableViewCell class]]) {
+                NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+                StudentHomeworkCDTVC *studentHCDTVC = segue.destinationViewController;
+                Subject *subject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+                studentHCDTVC.title = subject ? subject.name : nil;
+                studentHCDTVC.subject = subject ? subject : nil;
+            }
+        }
+    }
 }
 
-// Saves context when we added a subject
+// Unwind segue action
 - (IBAction)studentDoneClicked:(UIStoryboardSegue *)segue
 {
     if ([segue.sourceViewController isKindOfClass:[StudentAddSubjectViewController class]]) {

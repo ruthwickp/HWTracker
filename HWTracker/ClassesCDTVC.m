@@ -32,18 +32,6 @@
 - (void)addButtonPressed
 {}
 
-// Allows deletion to be performed on the table view
-- (void)tableView:(UITableView *)tableView
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Removes object from database
-        NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [[self.fetchedResultsController managedObjectContext] deleteObject:object];
-    }
-}
-
 // Displays subjects using the fetchedResultsController
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -56,7 +44,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Assignments: %d", [subject.homework count]];
     return cell;
 }
-
 
 
 @end

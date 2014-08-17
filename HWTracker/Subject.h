@@ -2,7 +2,7 @@
 //  Subject.h
 //  HWTracker
 //
-//  Created by Ruthwick Pathireddy on 8/12/14.
+//  Created by Ruthwick Pathireddy on 8/17/14.
 //  Copyright (c) 2014 Darkking. All rights reserved.
 //
 
@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *homework;
-@property (nonatomic, retain) NSSet *students;
+@property (nonatomic, retain) Student *student;
 @property (nonatomic, retain) Teacher *teacher;
 @end
 
@@ -25,10 +25,5 @@
 - (void)removeHomeworkObject:(Homework *)value;
 - (void)addHomework:(NSSet *)values;
 - (void)removeHomework:(NSSet *)values;
-
-- (void)addStudentsObject:(Student *)value;
-- (void)removeStudentsObject:(Student *)value;
-- (void)addStudents:(NSSet *)values;
-- (void)removeStudents:(NSSet *)values;
 
 @end

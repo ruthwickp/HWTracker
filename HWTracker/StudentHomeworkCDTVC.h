@@ -8,6 +8,8 @@
 
 #import "HomeworkCDTVC.h"
 
+// Displays the homework of a given class for
+// the student
 @interface StudentHomeworkCDTVC : HomeworkCDTVC
 
 @end

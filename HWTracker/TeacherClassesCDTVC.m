@@ -9,6 +9,7 @@
 #import "TeacherClassesCDTVC.h"
 #import "TeacherAddSubjectViewController.h"
 #import "TeacherHomeworkCDTVC.h"
+#import "Subject.h"
 
 @interface TeacherClassesCDTVC ()
 @property (strong, nonatomic) NSManagedObjectContext *context;
@@ -39,7 +40,7 @@
 {
     // Makes a request for the given entity
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Subject"];
-    request.predicate = [NSPredicate predicateWithFormat:@"teacher = %@", self.teacher];
+    request.predicate = [NSPredicate predicateWithFormat:@"(teacher = %@) AND (student = %@)", self.teacher, nil];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
                                                               ascending:YES
                                                                selector:@selector(localizedStandardCompare:)]];
@@ -48,6 +49,37 @@
                                                                         managedObjectContext:self.context
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
+}
+
+// When a teacher deletes a subject, it gets
+// deleted from core data and deletes all
+// subject instances for the students
+- (void)tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Makes a request for all subject instances in core data
+        // and removes them
+        Subject *subject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Subject"];
+        request.predicate = [NSPredicate predicateWithFormat:@"(name = %@) AND (teacher = %@)", subject.name, subject.teacher];
+        
+        // Finds matches from request
+        NSError *error;
+        NSArray *matches = [self.context executeFetchRequest:request error:&error];
+        if (error || !matches) {
+            NSLog(@"Error when deleting subject from teacher");
+        }
+        else {
+            // Deletes all objects in core data
+            [matches enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                if ([obj isKindOfClass:[NSManagedObject class]]) {
+                    [self.context deleteObject:obj];
+                }
+            }];
+        }
+    }
 }
 
 #pragma mark - Navigation
@@ -88,7 +120,7 @@
 - (IBAction)doneClicked:(UIStoryboardSegue *)segue
 {
     if ([segue.sourceViewController isKindOfClass:[TeacherAddSubjectViewController class]]) {
-        NSLog(@"Did click on done");
+        NSLog(@"Did click on done for adding subject teacher");
     }
 }
 

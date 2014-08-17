@@ -9,6 +9,7 @@
 #import "CoreDataTableViewController.h"
 #import "Subject.h"
 
+// Displays homework for a given subject
 @interface HomeworkCDTVC : CoreDataTableViewController
 
 @property (nonatomic, strong) Subject *subject;

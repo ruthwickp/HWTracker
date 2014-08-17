@@ -9,13 +9,6 @@
 #import "HomeworkCDTVC.h"
 #import "Homework.h"
 
-
-#import "Homework+Create.h"
-
-@interface HomeworkCDTVC ()
-
-@end
-
 @implementation HomeworkCDTVC
 
 #pragma mark - FetchedResultsController
@@ -61,13 +54,10 @@
     return cell;
 }
 
-// Changes status of homework when tapped
+// Removes highlighting for cell
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Homework *homework = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    homework.completed = [NSNumber numberWithBool:!homework.completed.boolValue];
     return NO;
 }
-
 
 @end

@@ -8,7 +8,8 @@
 
 #import "StudentAddSubjectViewController.h"
 #import "Teacher.h"
-#import "Subject.h"
+#import "Subject+Create.h"
+#import "NSManagedObject+Clone.h"
 
 @interface StudentAddSubjectViewController ()
 @property (nonatomic, strong) Subject *chosenSubject;
@@ -115,12 +116,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:UNWIND_SEGUE_IDENTIFIER]) {
-        // Makes sure subject is chosen and adds the subject to the
-        // students classes
+        // Creates an instance of the subject for the student
         if (self.chosenSubject) {
-            NSMutableSet *studentsClasses = [[NSMutableSet alloc] initWithSet:self.student.classes];
-            [studentsClasses addObject:self.chosenSubject];
-            self.student.classes = studentsClasses;
+            Subject *newSubject = (Subject *)[self.chosenSubject clone];
+            newSubject.student = self.student;
         }
     }
 }
