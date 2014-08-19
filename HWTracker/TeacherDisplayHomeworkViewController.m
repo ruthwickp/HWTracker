@@ -7,6 +7,8 @@
 //
 
 #import "TeacherDisplayHomeworkViewController.h"
+#import "Homework.h"
+#import "Subject.h"
 
 @interface TeacherDisplayHomeworkViewController () <UITextViewDelegate>
 @property (nonatomic) CGFloat animatedDistance;
@@ -57,12 +59,39 @@
 // Updates homework with input from the textfields
 - (void)updateHomework
 {
+    [self updateAllHomeworkInstances];
     self.title = self.titleTextView.text;
-    self.homework.title = self.titleTextView.text;
-    self.homework.info = self.descriptionTextView.text;
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM-dd-yyyy"];
-    self.homework.dueDate = [dateFormatter dateFromString:self.dueDateTextView.text];
+}
+
+// Updates all instances of homework. Method is used so that
+// all the subjects for the students can get an update for
+// their homework.
+- (void)updateAllHomeworkInstances
+{
+    // Gets all the homework that match
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Homework"];
+    request.predicate = [NSPredicate predicateWithFormat:@"(dueDate = %@) AND (info = %@) AND (title = %@) AND (inClass.name = %@) AND (inClass.teacher = %@)", self.homework.dueDate, self.homework.info, self.homework.title, self.homework.inClass.name, self.homework.inClass.teacher];
+    
+    // Finds matches from request
+    NSError *error;
+    NSArray *matches = [[self.homework managedObjectContext] executeFetchRequest:request error:&error];
+    if (error || !matches) {
+        NSLog(@"Error when trying to update homework for all subjects: %@", error);
+    }
+    else {
+        [matches enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            // Updates the homework
+            if ([obj isKindOfClass:[Homework class]]) {
+                Homework *eachHomework = (Homework *)obj;
+                eachHomework.title = self.titleTextView.text;
+                eachHomework.info = self.descriptionTextView.text;
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateFormat:@"MM-dd-yyyy"];
+                eachHomework.dueDate = [dateFormatter dateFromString:self.dueDateTextView.text];
+            }
+        }];
+    }
+
 }
 
 // Helper function to make textviews editable or not

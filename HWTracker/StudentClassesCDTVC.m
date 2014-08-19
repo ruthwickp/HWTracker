@@ -40,7 +40,7 @@
 {
     // Makes a request for the given entity
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Subject"];
-    request.predicate = [NSPredicate predicateWithFormat:@"student = %@", @[self.student]];
+    request.predicate = [NSPredicate predicateWithFormat:@"student = %@", self.student];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
                                                               ascending:YES
                                                                selector:@selector(localizedStandardCompare:)]];

@@ -16,12 +16,16 @@
                           homework:(NSSet *)homework
                            student:(Student *)student
 {
+    if (homework == nil) {
+        homework = [[NSSet alloc] init];
+    }
+    
     // Creates a request for the subject
     Subject *subject = nil;
     NSManagedObjectContext *context = [teacher managedObjectContext];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Subject"];
-    request.predicate = [NSPredicate predicateWithFormat:@"(name = %@) AND (teacher = %@) AND (homework = %@) AND (student = %@)",
-                         name, teacher, homework, student];
+    request.predicate = [NSPredicate predicateWithFormat:@"(name = %@) AND (teacher = %@) AND (student = %@)",
+                         name, teacher, student];
     
     // Finds if the subject already exists
     NSError *error;

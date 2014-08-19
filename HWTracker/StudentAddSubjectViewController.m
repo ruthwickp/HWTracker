@@ -10,6 +10,7 @@
 #import "Teacher.h"
 #import "Subject+Create.h"
 #import "NSManagedObject+Clone.h"
+#import "Student.h"
 
 @interface StudentAddSubjectViewController ()
 @property (nonatomic, strong) Subject *chosenSubject;
@@ -37,7 +38,7 @@
 {
     // Makes a request for the given entity
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Subject"];
-    request.predicate = [NSPredicate predicateWithFormat:@"teacher.fromSchool = %@", self.student.fromSchool];
+    request.predicate = [NSPredicate predicateWithFormat:@"(teacher.fromSchool = %@) AND (student = %@)", self.student.fromSchool, nil];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"teacher.name"
                                                               ascending:YES
                                                                selector:@selector(localizedStandardCompare:)],
@@ -118,7 +119,9 @@
     if ([segue.identifier isEqualToString:UNWIND_SEGUE_IDENTIFIER]) {
         // Creates an instance of the subject for the student
         if (self.chosenSubject) {
-            Subject *newSubject = (Subject *)[self.chosenSubject clone];
+            Subject *newSubject = (Subject *)[self.chosenSubject cloneInContext:[self.chosenSubject managedObjectContext]
+                                                                 exludeEntities:@[@"Student", @"Teacher"]];
+            newSubject.teacher = self.chosenSubject.teacher;
             newSubject.student = self.student;
         }
     }

@@ -14,4 +14,7 @@
 
 @property (nonatomic, strong) Subject *subject;
 
+// Sets the homework when completed
+@property (nonatomic, strong) Homework *homework;
+
 @end

@@ -103,11 +103,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:CREATED_HOMEWORK]) {
-        [Homework createHomeworkWithTitle:self.titleTextField.text
-                                     info:self.descriptionTextView.text
-                                  dueDate:self.date
-                                   status:[NSNumber numberWithBool:NO]
-                                  inClass:self.subject];
+        self.homework = [Homework createHomeworkWithTitle:self.titleTextField.text
+                                                     info:self.descriptionTextView.text
+                                                  dueDate:self.date
+                                                   status:[NSNumber numberWithBool:NO]
+                                                  inClass:self.subject];
     }
 }
 

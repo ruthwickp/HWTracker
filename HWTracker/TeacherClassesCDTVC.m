@@ -73,11 +73,13 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         }
         else {
             // Deletes all objects in core data
-            [matches enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                if ([obj isKindOfClass:[NSManagedObject class]]) {
-                    [self.context deleteObject:obj];
-                }
-            }];
+#warning Deleting class may not work here
+            [matches enumerateObjectsWithOptions:NSEnumerationReverse
+                                      usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                                          if ([obj isKindOfClass:[NSManagedObject class]]) {
+                                              [self.context deleteObject:obj];
+                                          }
+                                      }];
         }
     }
 }

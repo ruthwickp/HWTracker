@@ -10,8 +10,9 @@
 
 @interface NSManagedObject (Clone)
 
-// Allows the NSManagedObject to be cloned
-// and returns the instance
-- (NSManagedObject *)clone;
+// Allows the object to cloned with the following
+// entities excluded
+- (NSManagedObject *)cloneInContext:(NSManagedObjectContext *)context
+                     exludeEntities:(NSArray *)namesOfEntitiesToExclude;
 
 @end
