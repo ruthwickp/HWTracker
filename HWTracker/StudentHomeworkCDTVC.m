@@ -9,8 +9,34 @@
 #import "StudentHomeworkCDTVC.h"
 #import "DisplayHomeworkViewController.h"
 #import "Homework.h"
+#import "ManagedObjectChangedNotification.h"
 
 @implementation StudentHomeworkCDTVC
+
+// Reloads table data when homework is added, deleted, or updated
+#warning Haven't tested this out
+- (void)awakeFromNib
+{
+    [[NSNotificationCenter defaultCenter] addObserverForName:ADDED_HOMEWORK_NOTIFICATION
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [self.tableView reloadData];
+                                                  }];
+    [[NSNotificationCenter defaultCenter] addObserverForName:DELETED_HOMEWORK_NOTIFICATION
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [self.tableView reloadData];
+                                                  }];
+    [[NSNotificationCenter defaultCenter] addObserverForName:UPDATED_HOMEWORK_NOTIFICATION
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [self.tableView reloadData];
+                                                  }];
+}
+
 
 // Changes status of homework when tapped
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath

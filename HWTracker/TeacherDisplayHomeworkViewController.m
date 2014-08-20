@@ -9,6 +9,7 @@
 #import "TeacherDisplayHomeworkViewController.h"
 #import "Homework.h"
 #import "Subject.h"
+#import "ManagedObjectChangedNotification.h"
 
 @interface TeacherDisplayHomeworkViewController () <UITextViewDelegate>
 @property (nonatomic) CGFloat animatedDistance;
@@ -61,6 +62,8 @@
 {
     [self updateAllHomeworkInstances];
     self.title = self.titleTextView.text;
+    // Posts notification when subject is changed
+    [[NSNotificationCenter defaultCenter] postNotificationName:UPDATED_HOMEWORK_NOTIFICATION object:self];
 }
 
 // Updates all instances of homework. Method is used so that

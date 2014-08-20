@@ -10,6 +10,7 @@
 #import "TeacherAddSubjectViewController.h"
 #import "TeacherHomeworkCDTVC.h"
 #import "Subject.h"
+#import "ManagedObjectChangedNotification.h"
 
 @interface TeacherClassesCDTVC ()
 @property (strong, nonatomic) NSManagedObjectContext *context;
@@ -81,6 +82,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                                           }
                                       }];
         }
+        // Posts notification when subject is deleted
+        [[NSNotificationCenter defaultCenter] postNotificationName:DELETED_SUBJECT_NOTIFICATION object:self];
     }
 }
 
@@ -122,6 +125,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 - (IBAction)doneClicked:(UIStoryboardSegue *)segue
 {
     if ([segue.sourceViewController isKindOfClass:[TeacherAddSubjectViewController class]]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:ADDED_SUBJECT_NOTIFICATION object:self];
         NSLog(@"Did click on done for adding subject teacher");
     }
 }

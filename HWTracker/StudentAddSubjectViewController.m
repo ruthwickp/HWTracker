@@ -11,12 +11,25 @@
 #import "Subject+Create.h"
 #import "NSManagedObject+Clone.h"
 #import "Student.h"
+#import "ManagedObjectChangedNotification.h"
 
 @interface StudentAddSubjectViewController ()
 @property (nonatomic, strong) Subject *chosenSubject;
 @end
 
 @implementation StudentAddSubjectViewController
+
+// Reloads table data when subject is added
+#warning Haven't tested this out
+- (void)awakeFromNib
+{
+    [[NSNotificationCenter defaultCenter] addObserverForName:ADDED_SUBJECT_NOTIFICATION
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [self.tableView reloadData];
+                                                  }];
+}
 
 #pragma mark - NSFetchedResultsController
 

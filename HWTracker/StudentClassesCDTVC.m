@@ -10,12 +10,25 @@
 #import "StudentAddSubjectViewController.h"
 #import "Subject.h"
 #import "StudentHomeworkCDTVC.h"
+#import "ManagedObjectChangedNotification.h"
 
 @interface StudentClassesCDTVC ()
 @property (nonatomic, strong) NSManagedObjectContext *context;
 @end
 
 @implementation StudentClassesCDTVC
+
+// Reloads table data when subject is deleted
+#warning Haven't tested this out
+- (void)awakeFromNib
+{
+    [[NSNotificationCenter defaultCenter] addObserverForName:DELETED_SUBJECT_NOTIFICATION
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [self.tableView reloadData];
+                                                  }];
+}
 
 #pragma mark - Displaying Classes
 

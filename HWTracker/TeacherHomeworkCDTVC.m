@@ -11,6 +11,7 @@
 #import "TeacherDisplayHomeworkViewController.h"
 #import "Homework.h"
 #import "NSManagedObject+Clone.h"
+#import "ManagedObjectChangedNotification.h"
 
 @interface TeacherHomeworkCDTVC ()
 
@@ -51,6 +52,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         // Posts a notification when a homework is going to be deleted
         Homework *homework = [self.fetchedResultsController objectAtIndexPath:indexPath];
         [self deleteAllHomeworkInstances:homework];
+        [[NSNotificationCenter defaultCenter] postNotificationName:DELETED_HOMEWORK_NOTIFICATION object:self];
     }
 }
 
@@ -92,6 +94,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         AddHomeworkViewController *addHVC = segue.sourceViewController;
         if (addHVC.homework) {
             [self addAllHomeworkInstances:addHVC.homework];
+            [[NSNotificationCenter defaultCenter] postNotificationName:ADDED_HOMEWORK_NOTIFICATION object:self];
             NSLog(@"Done clicked. Added Homework");
         }
     }
