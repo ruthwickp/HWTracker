@@ -12,6 +12,8 @@
 // Displays classses that the teacher is teaching
 @interface TeacherClassesCDTVC : ClassesCDTVC
 
+// Property is set when the view controller receives
+// a notification that a teacher logged in
 @property (nonatomic, strong) Teacher *teacher;
 
 @end

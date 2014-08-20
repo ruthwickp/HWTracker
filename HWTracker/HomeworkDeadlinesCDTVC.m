@@ -9,19 +9,7 @@
 #import "HomeworkDeadlinesCDTVC.h"
 #import "Homework.h"
 
-@interface HomeworkDeadlinesCDTVC ()
-
-@end
-
 @implementation HomeworkDeadlinesCDTVC
-
-// Remove editing options
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.tabBarController.navigationItem.leftBarButtonItem = nil;
-    self.tabBarController.navigationItem.rightBarButtonItem = nil;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {    

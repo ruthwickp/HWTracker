@@ -21,6 +21,7 @@
                                                        queue:nil
                                                   usingBlock:^(NSNotification *note) {
                                                       self.student = note.userInfo[STUDENT_LOGIN_CONTEXT];
+                                                      self.navigationItem.title = self.student.name;
                                                   }];
 }
 
@@ -33,7 +34,7 @@
 
 // Initializes the NSFetchedResultsController to the following request
 - (void)initializeFetchResultsController
-{ 
+{
     // Makes a request for the given entity
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Homework"];
     request.predicate = [NSPredicate predicateWithFormat:@"inClass.student = %@", self.student];

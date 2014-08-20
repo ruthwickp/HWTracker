@@ -24,6 +24,7 @@
                                                        queue:nil
                                                   usingBlock:^(NSNotification *note) {
                                                       self.teacher = note.userInfo[TEACHER_LOGIN_CONTEXT];
+                                                      self.navigationItem.title = self.teacher.name;
                                                   }];
 }
 

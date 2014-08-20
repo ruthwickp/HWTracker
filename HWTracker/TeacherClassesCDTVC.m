@@ -11,12 +11,25 @@
 #import "TeacherHomeworkCDTVC.h"
 #import "Subject.h"
 #import "ManagedObjectChangedNotification.h"
+#import "LoginNotification.h"
 
 @interface TeacherClassesCDTVC ()
 @property (strong, nonatomic) NSManagedObjectContext *context;
 @end
 
 @implementation TeacherClassesCDTVC
+
+- (void)awakeFromNib
+{
+    // Makes the view controller listen when a teacher has logged in
+    [[NSNotificationCenter defaultCenter] addObserverForName:TEACHER_LOGIN_NOTIFICATION
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *note) {
+                                                      self.teacher = note.userInfo[TEACHER_LOGIN_CONTEXT];
+                                                      self.navigationItem.title = self.teacher.name;
+                                                  }];
+}
 
 #pragma mark - Displaying Classes
 

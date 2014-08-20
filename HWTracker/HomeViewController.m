@@ -9,8 +9,6 @@
 #import "HomeViewController.h"
 #import "DatabaseAvailability.h"
 #import <CoreData/CoreData.h>
-#import "StudentClassesCDTVC.h"
-#import "TeacherClassesCDTVC.h"
 #import "Student+Create.h"
 #import "Teacher+Create.h"
 #import "StudentRegistrationViewController.h"
@@ -113,23 +111,15 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Segues to first view controller if the destinationVC is in
-    // a UITabBarController
+    // Segues to a UITabBarController
     if ([segue.destinationViewController isKindOfClass:[UITabBarController class]]) {
-        UITabBarController *tabBarController = segue.destinationViewController;
-        UIViewController *destinationVC = [tabBarController.viewControllers firstObject];
-
-        // If the segue if for a student
+        // If the segue if for a student, we display student view controller
         if ([segue.identifier isEqualToString:STUDENT_LOGIN]) {
-            if ([destinationVC isKindOfClass:[StudentClassesCDTVC class]]) {
-                [self prepareStudentViewController:(StudentClassesCDTVC *)destinationVC];
-            }
+            [self prepareStudentViewController];
         }
-        // If the segue is for a teacher
+        // If the segue is for a teacher, we display teacher view controller
         else if ([segue.identifier isEqualToString:TEACHER_LOGIN]) {
-            if ([destinationVC isKindOfClass:[TeacherClassesCDTVC class]]) {
-                [self prepareTeacherViewController:(TeacherClassesCDTVC *)destinationVC];
-            }
+            [self prepareTeacherViewController];
         }
     }
     // Segues to registration view controllers by passing in context
@@ -144,15 +134,13 @@
 }
 
 // Prepares a view controller for the student
-- (void)prepareStudentViewController:(StudentClassesCDTVC *)studentCDTVC
+- (void)prepareStudentViewController
 {
     Student *student = [Student findStudentWithUsername:self.usernameTextField.text
                                             andPassword:self.passwordTextField.text
                                  inManagedObjectContext:self.context];
     // Makes sure student exists (should always be true) and posts notification
     if (student) {
-        studentCDTVC.student = student;
-        studentCDTVC.tabBarController.title = student.name;
         [[NSNotificationCenter defaultCenter] postNotificationName:STUDENT_LOGIN_NOTIFICATION
                                                             object:self
                                                           userInfo:@{STUDENT_LOGIN_CONTEXT: student}];
@@ -163,15 +151,13 @@
 }
 
 // Prepares a view controller for the teacher
-- (void)prepareTeacherViewController:(TeacherClassesCDTVC *)teacherCDTVC
+- (void)prepareTeacherViewController
 {
     Teacher *teacher = [Teacher findTeacherWithUsername:self.usernameTextField.text
                                                password:self.passwordTextField.text
                                inNSManagedObjectContext:self.context];
     // Makes sure teacher exists (should always be true) and posts notification
     if (teacher) {
-        teacherCDTVC.teacher = teacher;
-        teacherCDTVC.tabBarController.title = teacher.name;
         [[NSNotificationCenter defaultCenter] postNotificationName:TEACHER_LOGIN_NOTIFICATION
                                                             object:self
                                                           userInfo:@{TEACHER_LOGIN_CONTEXT: teacher}];

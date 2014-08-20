@@ -12,6 +12,8 @@
 // Displays a students list of classes
 @interface StudentClassesCDTVC : ClassesCDTVC
 
+// Property is set when the view controller receives
+// a notification that a student logged in
 @property (nonatomic, strong) Student *student;
 
 @end

@@ -11,6 +11,7 @@
 #import "Subject.h"
 #import "StudentHomeworkCDTVC.h"
 #import "ManagedObjectChangedNotification.h"
+#import "LoginNotification.h"
 
 @interface StudentClassesCDTVC ()
 @property (nonatomic, strong) NSManagedObjectContext *context;
@@ -18,10 +19,19 @@
 
 @implementation StudentClassesCDTVC
 
-// Reloads table data when subject is deleted
-#warning Haven't tested this out
 - (void)awakeFromNib
 {
+    // Makes the view controller listen when a student has logged in
+    [[NSNotificationCenter defaultCenter] addObserverForName:STUDENT_LOGIN_NOTIFICATION
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *note) {
+                                                      self.student = note.userInfo[STUDENT_LOGIN_CONTEXT];
+                                                      self.navigationItem.title = self.student.name;
+                                                  }];
+    
+    // Reloads table data when subject is deleted
+#warning Haven't tested this out
     [[NSNotificationCenter defaultCenter] addObserverForName:DELETED_SUBJECT_NOTIFICATION
                                                       object:nil
                                                        queue:nil
