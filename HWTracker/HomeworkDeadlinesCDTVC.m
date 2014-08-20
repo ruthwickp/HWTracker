@@ -40,11 +40,9 @@
     return cell;
 }
 
-// Changes status of homework when tapped
+// Removes highlighting capability
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Homework *homework = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    homework.completed = [NSNumber numberWithBool:!homework.completed.boolValue];
     return NO;
 }
 

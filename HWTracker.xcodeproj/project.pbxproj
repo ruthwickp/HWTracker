@@ -36,6 +36,7 @@
 		7D485F2119A12104004FFF10 /* NSManagedObject+Clone.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D485F2019A12104004FFF10 /* NSManagedObject+Clone.m */; };
 		7D51076D198F2E1F00A71500 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D51076C198F2E1F00A71500 /* HomeViewController.m */; };
 		7D538C7B199992C0002CFB54 /* TeacherAddSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D538C7A199992C0002CFB54 /* TeacherAddSubjectViewController.m */; };
+		7D5FAC1719A5018F0000F477 /* StudentHomeworkDeadlinesCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FAC1619A5018F0000F477 /* StudentHomeworkDeadlinesCDTVC.m */; };
 		7D6021661992D5E1006CC900 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6021651992D5E1006CC900 /* CoreData.framework */; };
 		7D65D4651993F5F1003A0239 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D4641993F5F1003A0239 /* CoreDataTableViewController.m */; };
 		7D65D4681993F645003A0239 /* StudentClassesCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65D4671993F645003A0239 /* StudentClassesCDTVC.m */; };
@@ -117,6 +118,8 @@
 		7D538C79199992C0002CFB54 /* TeacherAddSubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherAddSubjectViewController.h; sourceTree = "<group>"; };
 		7D538C7A199992C0002CFB54 /* TeacherAddSubjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherAddSubjectViewController.m; sourceTree = "<group>"; };
 		7D5FAC1419A4E9190000F477 /* ManagedObjectChangedNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagedObjectChangedNotification.h; sourceTree = "<group>"; };
+		7D5FAC1519A5018F0000F477 /* StudentHomeworkDeadlinesCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentHomeworkDeadlinesCDTVC.h; sourceTree = "<group>"; };
+		7D5FAC1619A5018F0000F477 /* StudentHomeworkDeadlinesCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentHomeworkDeadlinesCDTVC.m; sourceTree = "<group>"; };
 		7D6021641992D144006CC900 /* DatabaseAvailability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatabaseAvailability.h; sourceTree = "<group>"; };
 		7D6021651992D5E1006CC900 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7D65D4631993F5F1003A0239 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -290,6 +293,8 @@
 			children = (
 				7D406DE2199C6C80008ECEDB /* HomeworkDeadlinesCDTVC.h */,
 				7D406DE3199C6C80008ECEDB /* HomeworkDeadlinesCDTVC.m */,
+				7D5FAC1519A5018F0000F477 /* StudentHomeworkDeadlinesCDTVC.h */,
+				7D5FAC1619A5018F0000F477 /* StudentHomeworkDeadlinesCDTVC.m */,
 				7DBD2A9E199D15D100994DAF /* TeacherHomeworkDeadlinesCDTVC.h */,
 				7DBD2A9F199D15D100994DAF /* TeacherHomeworkDeadlinesCDTVC.m */,
 			);
@@ -500,6 +505,7 @@
 				7D65D47719942F9D003A0239 /* TeacherClassesCDTVC.m in Sources */,
 				7D406DDE199C11FA008ECEDB /* DisplayHomeworkViewController.m in Sources */,
 				7D23481F198DDA0A00D4A802 /* HWTracker.xcdatamodeld in Sources */,
+				7D5FAC1719A5018F0000F477 /* StudentHomeworkDeadlinesCDTVC.m in Sources */,
 				7D65D4651993F5F1003A0239 /* CoreDataTableViewController.m in Sources */,
 				7D65D4681993F645003A0239 /* StudentClassesCDTVC.m in Sources */,
 				7D485F1E19A113CE004FFF10 /* Teacher.m in Sources */,

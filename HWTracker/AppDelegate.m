@@ -100,6 +100,15 @@
                               username:@"darkkingruthwick"
                               password:@"Ruthwick1995"
                             fromSchool:school];
+        [Student createStudentWithName:@"Sathwick Pathireddy"
+                              Username:@"sathwickp"
+                              Password:@"asdf1234"
+                            fromSchool:school];
+        [Teacher createTeacherWithName:@"Teacher Sathwick"
+                              username:@"darkkingsathwick"
+                              password:@"asdf1234"
+                            fromSchool:school];
+
     }
 }
 
